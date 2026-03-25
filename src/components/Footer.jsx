@@ -9,7 +9,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="text-[#D5DAE6]" style={{ background: 'linear-gradient(135deg, #0C111D, #101828)' }}>
+    <footer className="text-[#D5DAE6] bg-gradient-to-b from-[#1a1a1a] to-[#0a0a0a]">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {/* Empresa */}
@@ -21,9 +21,10 @@ export default function Footer() {
                 width={160}
                 height={50}
                 className="h-10 w-auto sm:h-12 object-contain"
+                loading="lazy"
               />
             </div>
-            <p className="text-sm text-text-muted leading-relaxed">
+            <p className="text-sm text-gray-400 leading-relaxed">
               Distribuidor atacadista de cartuchos e toners originais para
               revendas e empresas em todo o Brasil.
             </p>
@@ -33,24 +34,24 @@ export default function Footer() {
           <div>
             <h2 className="text-lg font-bold text-[#E8ECF1] mb-4">Marcas</h2>
             <nav aria-label="Links das marcas">
-              <ul className="space-y-2 text-sm text-text-muted">
+              <ul className="space-y-2 text-sm text-gray-400">
                 <li>
-                  <a href="#hp" className="hover:text-accent-light transition-colors">
+                  <a href="#marcas" className="hover:text-blue-400 transition-colors min-h-[44px] inline-flex items-center">
                     Linha HP
                   </a>
                 </li>
                 <li>
-                  <a href="#epson" className="hover:text-accent-light transition-colors">
+                  <a href="#marcas" className="hover:text-blue-400 transition-colors min-h-[44px] inline-flex items-center">
                     Linha Epson
                   </a>
                 </li>
                 <li>
-                  <a href="#brother" className="hover:text-accent-light transition-colors">
+                  <a href="#marcas" className="hover:text-blue-400 transition-colors min-h-[44px] inline-flex items-center">
                     Linha Brother
                   </a>
                 </li>
                 <li>
-                  <a href="#canon" className="hover:text-accent-light transition-colors">
+                  <a href="#marcas" className="hover:text-blue-400 transition-colors min-h-[44px] inline-flex items-center">
                     Linha Canon
                   </a>
                 </li>
@@ -61,15 +62,14 @@ export default function Footer() {
           {/* Informações */}
           <div>
             <h2 className="text-lg font-bold text-[#E8ECF1] mb-4">Informações</h2>
-            <address className="not-italic text-sm text-text-muted space-y-2">
-              <p>CNPJ: 00.000.000/0001-00</p>
-              <p>Rua Exemplo, 123 - Centro</p>
-              <p>São Paulo - SP, 01234-567</p>
+            <address className="not-italic text-sm text-gray-400 space-y-2">
+              <p>CNPJ: 40.390.360/0001-61</p>
+              <p>Rio de Janeiro - RJ</p>
               <p>
                 E-mail:{" "}
                 <a
                   href="mailto:contato@rjprint.com.br"
-                  className="hover:text-accent-light transition-colors"
+                  className="hover:text-blue-400 transition-colors"
                 >
                   contato@rjprint.com.br
                 </a>
@@ -78,7 +78,7 @@ export default function Footer() {
                 Tel / WhatsApp:{" "}
                 <a
                   href="tel:+5521964338875"
-                  className="hover:text-accent-light transition-colors"
+                  className="hover:text-blue-400 transition-colors"
                 >
                   (21) 96433-8875
                 </a>
@@ -89,14 +89,14 @@ export default function Footer() {
           {/* CTA Final */}
           <div>
             <h2 className="text-lg font-bold text-[#E8ECF1] mb-4">Faça sua Cotação</h2>
-            <p className="text-sm text-text-muted mb-4">
+            <p className="text-sm text-gray-400 mb-4">
               Atendimento rápido e personalizado para o seu volume.
             </p>
             <a
               href={`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MSG}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-whatsapp px-5 py-2.5 text-sm font-bold text-[#F7F8FA] transition-all duration-200 hover:bg-whatsapp-dark hover:scale-105 active:scale-95"
+              className="inline-flex items-center gap-2 rounded-full bg-whatsapp px-5 py-3 text-sm font-bold text-white transition-all duration-200 hover:bg-whatsapp-dark hover:scale-105 active:scale-95 min-h-[44px]"
               aria-label="Fazer cotação pelo WhatsApp"
             >
               <svg
@@ -114,17 +114,17 @@ export default function Footer() {
         </div>
 
         {/* Selos Segurança & Pagamento */}
-        <div className="mt-12 border-t border-[#1D2939] pt-8 flex flex-col items-center gap-6 sm:flex-row sm:justify-between">
+        <div className="mt-12 border-t border-white/10 pt-8 flex flex-col items-center gap-6 sm:flex-row sm:justify-between">
           
           <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
-            <span className="text-xs font-semibold text-text-muted uppercase tracking-wider">Pagamento via</span>
+            <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Pagamento via</span>
             <div className="flex items-center gap-3">
               {/* PIX */}
-              <div className="flex h-8 w-20 items-center justify-center rounded bg-[#1A2332]/60 px-2 py-1 shadow-sm border border-white/5 backdrop-blur-sm">
+              <div className="flex h-8 w-20 items-center justify-center rounded bg-white/5 px-2 py-1 border border-white/10">
                 <span className="text-[#32BCAD] font-bold text-sm">pix</span>
               </div>
               {/* Mercado Pago */}
-              <div className="flex h-8 w-28 items-center justify-center rounded bg-[#1A2332]/60 px-2 py-1 shadow-sm border border-white/5 backdrop-blur-sm">
+              <div className="flex h-8 w-28 items-center justify-center rounded bg-white/5 px-2 py-1 border border-white/10">
                 <span className="text-[#00B1EA] font-bold text-xs">mercado</span>
                 <span className="text-[#1E293B] bg-white rounded-sm px-1 font-bold text-[10px] ml-1">pago</span>
               </div>
@@ -132,18 +132,18 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
-            <span className="text-xs font-semibold text-text-muted uppercase tracking-wider">Segurança</span>
+            <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Segurança</span>
             <div className="flex items-center gap-3 text-[#D5DAE6]">
               {/* SSL */}
-              <div className="flex items-center gap-1.5 rounded bg-[#1A2332]/60 px-3 py-1 shadow-sm border border-white/5 backdrop-blur-sm">
+              <div className="flex items-center gap-1.5 rounded bg-white/5 px-3 py-1 border border-white/10">
                 <svg className="h-4 w-4 text-green-400" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M10 2a5 5 0 00-5 5v2a2 2 0 00-2 2v5a2 2 0 002 2h10a2 2 0 002-2v-5a2 2 0 00-2-2H7V7a3 3 0 015.905-.75 1 1 0 001.937-.5A5.002 5.002 0 0010 2z" clipRule="evenodd" />
                 </svg>
                 <span className="text-xs font-medium">SSL 256-bit</span>
               </div>
               {/* Site Seguro */}
-              <div className="flex items-center gap-1.5 rounded bg-[#1A2332]/60 px-3 py-1 shadow-sm border border-white/5 backdrop-blur-sm">
-                <svg className="h-4 w-4 text-accent-light" viewBox="0 0 20 20" fill="currentColor">
+              <div className="flex items-center gap-1.5 rounded bg-white/5 px-3 py-1 border border-white/10">
+                <svg className="h-4 w-4 text-blue-400" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
                 <span className="text-xs font-medium">Site Blindado</span>
@@ -155,17 +155,17 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-8 pt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
-          <p className="text-xs text-text-muted text-center sm:text-left">
+          <p className="text-xs text-gray-500 text-center sm:text-left">
             © {currentYear} RJ Print. Todos os direitos reservados.
             <br className="sm:hidden" />
             <span className="hidden sm:inline"> | </span>
             CNPJ: 40.390.360/0001-61
           </p>
-          <div className="flex gap-6 text-xs text-text-muted">
-            <a href="#" className="hover:text-accent-light transition-colors">
+          <div className="flex gap-6 text-xs text-gray-500">
+            <a href="#" className="hover:text-blue-400 transition-colors min-h-[44px] inline-flex items-center">
               Política de Privacidade
             </a>
-            <a href="#" className="hover:text-accent-light transition-colors">
+            <a href="#" className="hover:text-blue-400 transition-colors min-h-[44px] inline-flex items-center">
               Termos de Uso
             </a>
           </div>

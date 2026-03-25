@@ -5,7 +5,7 @@ const productCategories = [
     id: "cartuchos",
     title: "Cartuchos de Tinta",
     description: "Cartuchos originais HP, Epson e Canon com o maior giro de mercado. Alto rendimento para impressoras jato de tinta, entregando cores vibrantes e impressões sem falhas.",
-    image: "https://placehold.co/800x600/ffffff/1E1E24.png?text=Cartuchos+Originais",
+    image: "/product_cartridge_color.webp",
     bullets: ["Todas as numerações", "Rendimento Padrão e XL", "100% Originais"],
     startingPrice: "R$ 29,90"
   },
@@ -13,7 +13,7 @@ const productCategories = [
     id: "toners",
     title: "Toners Laser",
     description: "Linha completa de toners originais para impressoras laser monocromáticas e coloridas. Qualidade impecável para documentos oficiais e altíssima capacidade de impressão.",
-    image: "https://placehold.co/800x600/ffffff/1E1E24.png?text=Toners+de+Alta+Capacidade",
+    image: "/product_hp_toner_black.webp",
     bullets: ["Cores CMYK e Monocromáticos", "Até 10.000 páginas", "Secagem instantânea"],
     startingPrice: "R$ 34,90"
   },
@@ -21,7 +21,7 @@ const productCategories = [
     id: "refis",
     title: "Refil de Tinta (EcoTank/MegaTank)",
     description: "Garrafas de tintas originais desenhadas para sistemas de tanque. Rendimento imbatível, evitando entupimentos na cabeça de impressão e zelando pelo equipamento.",
-    image: "https://placehold.co/800x600/ffffff/1E1E24.png?text=Refis+de+Tinta",
+    image: "/product_epson_ink.webp",
     bullets: ["Tintas Corante e Pigmentada", "Maior custo x benefício", "Evita manutenções"],
     startingPrice: "R$ 38,90"
   },
@@ -29,7 +29,7 @@ const productCategories = [
     id: "cilindros",
     title: "Cilindros e Unidades de Imagem",
     description: "Peças de reposição vitais para copiadoras e multifuncionais de alto volume, assegurando que o toner seja transferido para o papel com a máxima nitidez e em velocidade industrial.",
-    image: "https://placehold.co/800x600/ffffff/1E1E24.png?text=Cilindros+de+Imagem",
+    image: "/product_brother_toner.webp",
     bullets: ["Alta durabilidade", "Qualidade fotográfica", "Manutenção preventiva"],
     startingPrice: "R$ 89,90"
   },

@@ -38,10 +38,6 @@ export default function Header() {
               className="h-10 w-auto sm:h-12 object-contain"
               priority
             />
-            {/* Badge B2B */}
-            <span className="hidden sm:inline-flex items-center gap-1 rounded-full bg-blue-500/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-blue-400 border border-blue-500/20">
-              ⭐ Revenda Oficial
-            </span>
           </a>
 
           {/* Navegação Desktop (Oculta no Mobile) */}

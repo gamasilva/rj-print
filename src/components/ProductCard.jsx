@@ -10,7 +10,7 @@ export default function ProductCard({ product, brandName }) {
   return (
     <article className="group flex flex-col overflow-hidden rounded-2xl border border-gray-100 bg-white p-5 shadow-sm transition-all duration-300 hover:shadow-xl hover:border-gray-200">
       
-      {/* Imagem do Produto Suave */}
+      {/* Imagem do Produto */}
       <div className="relative mb-5 aspect-[4/3] w-full overflow-hidden rounded-xl bg-gray-50/50 flex items-center justify-center p-4">
         <Image
           src={product.image || `https://placehold.co/400x300/ffffff/64748b.png?text=${encodeURIComponent(product.name)}`}
@@ -20,7 +20,7 @@ export default function ProductCard({ product, brandName }) {
           className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105 mix-blend-multiply"
           loading="lazy"
         />
-        {/* Badge Sutil e Clean */}
+        {/* Badge Atacado */}
         <span className="absolute top-2 left-2 rounded text-[10px] font-bold uppercase tracking-widest text-[#F97316] bg-[#FFF7ED] px-2 py-1 shadow-sm border border-[#FFEDD5]">
           Atacado
         </span>
@@ -37,14 +37,35 @@ export default function ProductCard({ product, brandName }) {
           {product.description || "Alto Rendimento | B2B"}
         </p>
 
-        {/* Compatibilidade Instantânea (Redução de Atrito) */}
-        <div className="mt-2.5 inline-flex w-fit items-center gap-1.5 rounded-md border border-blue-100 bg-blue-50 px-2 py-1 text-[10px] text-blue-700">
+        {/* Tags de Autenticidade + Produto */}
+        <div className="flex flex-wrap gap-1.5 mt-3 mb-3">
+          <span className="inline-flex items-center gap-1 rounded-md bg-blue-50 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-blue-700 border border-blue-100">
+            <svg className="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+            </svg>
+            Original
+          </span>
+          <span className="inline-flex items-center gap-1 rounded-md bg-cyan-50 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-cyan-700 border border-cyan-100">
+            Genuíno
+          </span>
+          {product.tags?.map((tag) => (
+            <span
+              key={tag}
+              className="inline-flex items-center rounded-md bg-gray-50 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-gray-600 border border-gray-100"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        {/* Compatibilidade */}
+        <div className="inline-flex w-fit items-center gap-1.5 rounded-md border border-blue-100 bg-blue-50 px-2 py-1 text-[10px] text-blue-700 mb-3">
           <span className="font-bold uppercase tracking-wider opacity-80">Para:</span>
           <span className="font-semibold line-clamp-1">{product.tags?.[2] || "Modelos LaserJet/EcoTank"}</span>
         </div>
 
-        {/* Preços - Menos ruído, mais clareza */}
-        <div className="mt-4 mb-4 border-t border-gray-100 pt-3">
+        {/* Preços */}
+        <div className="mt-auto border-t border-gray-100 pt-3 mb-4">
           <div className="flex flex-col gap-0.5">
             <span className="text-[11px] font-medium text-gray-400">Preço Unitário:</span>
             <div className="flex items-baseline gap-1.5">
@@ -53,7 +74,6 @@ export default function ProductCard({ product, brandName }) {
               </span>
               <span className="text-[10px] font-bold text-[#16A34A] uppercase bg-green-50 px-1.5 py-0.5 rounded">no Pix</span>
             </div>
-            {/* Custo Por Página (Gatilho B2B Financeiro) */}
             <span className="text-[10px] font-medium text-gray-400 mt-0.5">Custo aprox: R$ 0,02 / pág</span>
             
             {/* Gatilho Box Compacto */}
@@ -65,7 +85,7 @@ export default function ProductCard({ product, brandName }) {
         </div>
 
         {/* Ação */}
-        <div className="mt-auto pt-1">
+        <div className="pt-1">
           <a
             href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMsg}`}
             target="_blank"
@@ -83,7 +103,7 @@ export default function ProductCard({ product, brandName }) {
             Fazer Cotação
           </a>
           
-          {/* Confiança (Minimalista) */}
+          {/* Confiança */}
           <div className="mt-3.5 flex items-center justify-center gap-4 text-[9px] font-semibold uppercase tracking-wider text-gray-400">
             <span className="flex items-center gap-1">🚚 Envio Imediato</span>
             <span className="h-3 w-[1px] bg-gray-200"></span>

@@ -8,7 +8,9 @@ const trustItems = [
     ),
     title: "Produtos 100% Originais",
     description:
-      "Todos os cartuchos e toners são originais de fábrica. Comprovamos a procedência com nota fiscal.",
+      "Cada cartucho e toner é original de fábrica, com selo de autenticidade e nota fiscal comprovando a procedência. Proteja seu parque de impressão.",
+    stat: "100%",
+    statLabel: "Original",
   },
   {
     icon: (
@@ -17,9 +19,11 @@ const trustItems = [
         <path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16" />
       </svg>
     ),
-    title: "100% Homologado",
+    title: "Homologação Total",
     description:
-      "Distribuição oficial de produtos íntegros, de lote rastreável. Seu parque de impressão seguro e regulamentado.",
+      "Distribuição de produtos íntegros, de lote rastreável. Seu parque de impressão seguro, regulamentado e com garantia do fabricante.",
+    stat: "0",
+    statLabel: "Reclamações",
   },
   {
     icon: (
@@ -31,7 +35,9 @@ const trustItems = [
     ),
     title: "Estoque para Grandes Volumes",
     description:
-      "Capacidade de entrega para pedidos de alto volume. Logística otimizada para todo o Brasil.",
+      "Capacidade de entrega massiva para pedidos de alto volume. Logística própria otimizada para todo o Brasil — nunca deixamos sua empresa sem suprimentos.",
+    stat: "+50K",
+    statLabel: "Suprimentos/Ano",
   },
   {
     icon: (
@@ -43,9 +49,11 @@ const trustItems = [
         <polyline points="10 9 9 9 8 9" />
       </svg>
     ),
-    title: "CNPJ Transparente",
+    title: "Transparência Total",
     description:
-      "Empresa regularizada e transparente. Emissão de nota fiscal em todas as operações.",
+      "Empresa regularizada com CNPJ ativo. Emissão de nota fiscal em 100% das operações. Sem surpresas, sem letrinhas miúdas — confiança de ponta a ponta.",
+    stat: "NF-e",
+    statLabel: "Em toda venda",
   },
 ];
 
@@ -53,41 +61,61 @@ export default function TrustSection() {
   return (
     <section
       id="beneficios"
-      className="bg-gradient-to-b from-[#1a1a1a] to-[#121212] py-10 sm:py-20"
+      className="relative bg-gradient-to-b from-[#1a1a1a] to-[#0a0a0a] py-16 sm:py-28 overflow-hidden"
       aria-labelledby="trust-heading"
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10 sm:mb-14">
+      {/* Orbs decorativos */}
+      <div className="absolute top-1/4 -left-20 w-60 h-60 bg-blue-500/5 rounded-full blur-3xl" aria-hidden="true" />
+      <div className="absolute bottom-1/4 -right-20 w-80 h-80 bg-cyan-500/5 rounded-full blur-3xl" aria-hidden="true" />
+
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16 sm:mb-20">
+          <span className="inline-flex items-center gap-2 rounded-full bg-white/5 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-blue-400 border border-white/10 mb-6">
+            <span className="h-1.5 w-1.5 rounded-full bg-blue-400 animate-pulse" />
+            Diferenciais Competitivos
+          </span>
           <h2
             id="trust-heading"
-            className="text-2xl font-extrabold tracking-tight text-[#E8ECF1] sm:text-3xl lg:text-4xl"
+            className="text-3xl font-black tracking-tight text-[#E8ECF1] sm:text-4xl lg:text-5xl"
           >
-            Por que somos o parceiro estratégico{" "}
-            <span className="bg-gradient-to-r from-accent-light to-sky-400 bg-clip-text text-transparent">
-              do seu negócio?
+            Por que somos o parceiro{" "}
+            <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+              estratégico do seu negócio?
             </span>
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-sm text-[#9BA3B5] sm:text-base">
-            Mais do que um fornecedor, somos o braço logístico que sua revenda
-            precisa para crescer com segurança.
+          <p className="mx-auto mt-6 max-w-3xl text-base text-[#9BA3B5] sm:text-lg leading-relaxed">
+            Não somos apenas um fornecedor. Somos a engrenagem que mantém sua operação de impressão funcionando com máxima eficiência, segurança e economia.
           </p>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 sm:gap-6">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 sm:gap-8">
           {trustItems.map((item, index) => (
             <div
               key={index}
-              className="group relative rounded-2xl border border-[#2A3243] bg-[#1A2332]/60 p-6 backdrop-blur-sm transition-all duration-300 hover:bg-[#1E2B3C]/80 hover:border-accent/20 hover:shadow-lg hover:shadow-accent/5 sm:p-8"
+              className="group relative rounded-3xl border border-[#2A3243]/80 bg-gradient-to-b from-[#1A2332]/80 to-[#141E2B]/60 p-8 backdrop-blur-sm transition-all duration-500 hover:bg-[#1E2B3C]/90 hover:border-blue-500/20 hover:shadow-2xl hover:shadow-blue-500/5 hover:-translate-y-2"
             >
-              <div className="mb-4 inline-flex rounded-xl bg-accent/20 p-3 text-accent-light transition-colors group-hover:bg-accent/30">
+              {/* Stat highlight */}
+              <div className="absolute top-6 right-6 text-right">
+                <p className="text-2xl font-black text-blue-400/80 group-hover:text-blue-400 transition-colors">
+                  {item.stat}
+                </p>
+                <p className="text-[9px] font-bold uppercase tracking-widest text-gray-600 group-hover:text-gray-500 transition-colors">
+                  {item.statLabel}
+                </p>
+              </div>
+
+              <div className="mb-6 inline-flex rounded-2xl bg-gradient-to-br from-blue-500/20 to-cyan-500/10 p-4 text-blue-400 transition-all group-hover:from-blue-500/30 group-hover:to-cyan-500/20 group-hover:shadow-lg group-hover:shadow-blue-500/10">
                 {item.icon}
               </div>
-              <h3 className="text-base font-bold text-[#E0E4EA] sm:text-lg">
+              <h3 className="text-lg font-black text-[#E0E4EA] mb-3 sm:text-xl">
                 {item.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-[#8690A2]">
+              <p className="text-sm leading-relaxed text-[#8690A2] group-hover:text-[#9BA3B5] transition-colors">
                 {item.description}
               </p>
+              
+              {/* Bottom accent line */}
+              <div className="mt-6 h-0.5 w-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full transition-all duration-500 group-hover:w-full" />
             </div>
           ))}
         </div>

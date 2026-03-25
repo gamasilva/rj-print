@@ -36,15 +36,6 @@ export default function AuthoritySection() {
             <p className="text-base text-gray-400 leading-relaxed">
               Trabalhamos com as melhores e mais rápidas transportadoras do Brasil. Acompanhe seu pedido em tempo real, da nossa expedição até a sua porta.
             </p>
-            
-            {/* Parceiros Logísticos */}
-            <div className="mt-8 flex flex-wrap gap-4 text-sm font-semibold text-gray-500 uppercase tracking-widest">
-              <span>Correios</span>
-              <span className="text-gray-700">•</span>
-              <span>Jadlog</span>
-              <span className="text-gray-700">•</span>
-              <span>Azul Express</span>
-            </div>
           </div>
 
           {/* Coluna 2: Estatísticas */}
