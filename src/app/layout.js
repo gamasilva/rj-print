@@ -41,10 +41,10 @@ export const metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "RJ Print",
+  "@type": "B2BBusiness",
+  name: "RJ Print - Distribuidora Atacadista",
   description:
-    "RJ Print: Distribuidor atacadista de cartuchos e toners originais HP, Epson, Brother e Canon.",
+    "Distribuição B2B de cartuchos e toners originais HP, Epson, Brother e Canon à pronta-entrega. Soluções corporativas.",
   url: "https://www.seusite.com.br",
   telephone: "+55-21-96433-8875",
   address: {

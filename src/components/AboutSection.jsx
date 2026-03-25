@@ -18,6 +18,16 @@ export default function AboutSection() {
               <p>
                 A <strong className="text-white">RJ Print</strong> nasceu com um propósito claro: ser o parceiro definitivo e mais confiável na distribuição de cartuchos e toners originais para o mercado corporativo brasileiro. Entendemos que para a sua revenda, escritório ou empresa não parar, você precisa de três pilares: <strong className="text-white text-opacity-90">preço agressivo de atacado, amplo estoque à pronta-entrega e procedência 100% original.</strong>
               </p>
+              
+              <div className="rounded-xl border border-red-500/20 bg-red-500/5 p-5 shadow-inner">
+                <p className="font-semibold text-red-200">
+                  Escritório travado por falta de tinta? Erros em documentos cruciais por falhas na impressão ou cartuchos secos?
+                </p>
+                <p className="mt-2 text-sm text-gray-400">
+                  Blindamos seu parque de impressões com originais entregues antes da sua máquina parar. Troque o amadorismo e os atrasos constantes por uma logística homologada B2B.
+                </p>
+              </div>
+
               <p>
                 Especializados nas linhas corporativas da HP, Epson, Brother e Canon, nós centralizamos e distribuímos grandes volumes diariamente. Isso significa que, ao comprar com a RJ Print, você está negociando de forma direta, cortando intermediários da cadeia de suprimentos e, consequentemente, alavancando a sua margem de lucro.
               </p>

@@ -37,6 +37,12 @@ export default function ProductCard({ product, brandName }) {
           {product.description || "Alto Rendimento | B2B"}
         </p>
 
+        {/* Compatibilidade Instantânea (Redução de Atrito) */}
+        <div className="mt-2.5 inline-flex w-fit items-center gap-1.5 rounded-md border border-blue-100 bg-blue-50 px-2 py-1 text-[10px] text-blue-700">
+          <span className="font-bold uppercase tracking-wider opacity-80">Para:</span>
+          <span className="font-semibold line-clamp-1">{product.tags?.[2] || "Modelos LaserJet/EcoTank"}</span>
+        </div>
+
         {/* Preços - Menos ruído, mais clareza */}
         <div className="mt-4 mb-4 border-t border-gray-100 pt-3">
           <div className="flex flex-col gap-0.5">
@@ -47,6 +53,8 @@ export default function ProductCard({ product, brandName }) {
               </span>
               <span className="text-[10px] font-bold text-[#16A34A] uppercase bg-green-50 px-1.5 py-0.5 rounded">no Pix</span>
             </div>
+            {/* Custo Por Página (Gatilho B2B Financeiro) */}
+            <span className="text-[10px] font-medium text-gray-400 mt-0.5">Custo aprox: R$ 0,02 / pág</span>
             
             {/* Gatilho Box Compacto */}
             <div className="mt-2.5 flex items-center gap-2 rounded bg-gray-50 px-2.5 py-2 border border-gray-100">
