@@ -149,7 +149,7 @@ export default function BrandsNavSection({ brandProducts = {} }) {
                   </span>
                   <span
                     className={`mt-1 block text-[10px] sm:text-xs font-bold uppercase tracking-widest transition-colors duration-300 ${
-                      isActive ? "text-blue-600" : "text-gray-400 group-hover:text-gray-600"
+                      isActive ? "text-blue-600" : "text-gray-500 group-hover:text-gray-600"
                     }`}
                   >
                     {isActive ? "✓ Selecionada" : "Ver produtos →"}

@@ -1,3 +1,5 @@
+"use client";
+
 const WHATSAPP_NUMBER = "5521964338875";
 const WHATSAPP_MSG = encodeURIComponent(
   "Olá, gostaria de fazer uma cotação de cartuchos e toners no atacado."
@@ -9,7 +11,7 @@ export default function WhatsAppFloating() {
       href={`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MSG}`}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-whatsapp text-[#F7F8FA] shadow-2xl shadow-whatsapp/40 transition-all duration-200 hover:bg-whatsapp-dark hover:scale-110 active:scale-95 animate-pulse-soft sm:h-16 sm:w-16"
+      className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-whatsapp text-white shadow-2xl shadow-whatsapp/40 transition-transform duration-200 hover:scale-110 active:scale-95 sm:h-16 sm:w-16 will-change-transform"
       aria-label="Fale conosco pelo WhatsApp"
     >
       <svg

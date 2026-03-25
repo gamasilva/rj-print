@@ -16,7 +16,7 @@ export default function Footer() {
           <div>
             <div className="mb-4">
               <Image
-                src="/logo_rjprint.png"
+                src="/logo_rjprint.webp"
                 alt="RJ Print - Soluções em Impressão"
                 width={160}
                 height={50}

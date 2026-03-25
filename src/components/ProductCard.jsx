@@ -8,12 +8,12 @@ export default function ProductCard({ product, brandName }) {
   );
 
   return (
-    <article className="group flex flex-col overflow-hidden rounded-2xl border border-gray-100 bg-white p-5 shadow-sm transition-all duration-300 hover:shadow-xl hover:border-gray-200">
+    <article className="group flex flex-col overflow-hidden rounded-2xl border border-gray-100 bg-white p-5 shadow-sm transition-[box-shadow,border-color] duration-300 hover:shadow-xl hover:border-gray-200">
       
       {/* Imagem do Produto */}
       <div className="relative mb-5 aspect-[4/3] w-full overflow-hidden rounded-xl bg-gray-50/50 flex items-center justify-center p-4">
         <Image
-          src={product.image || `https://placehold.co/400x300/ffffff/64748b.png?text=${encodeURIComponent(product.name)}`}
+          src={product.image || "/product_cartridge_color.webp"}
           alt={`${product.name} - ${brandName}`}
           width={400}
           height={300}
@@ -67,14 +67,14 @@ export default function ProductCard({ product, brandName }) {
         {/* Preços */}
         <div className="mt-auto border-t border-gray-100 pt-3 mb-4">
           <div className="flex flex-col gap-0.5">
-            <span className="text-[11px] font-medium text-gray-400">Preço Unitário:</span>
+            <span className="text-[11px] font-medium text-gray-500">Preço Unitário:</span>
             <div className="flex items-baseline gap-1.5">
               <span className="text-3xl font-black text-gray-900 tracking-tight">
                 R$ 39<span className="text-xl">,90</span>
               </span>
               <span className="text-[10px] font-bold text-[#16A34A] uppercase bg-green-50 px-1.5 py-0.5 rounded">no Pix</span>
             </div>
-            <span className="text-[10px] font-medium text-gray-400 mt-0.5">Custo aprox: R$ 0,02 / pág</span>
+            <span className="text-[10px] font-medium text-gray-500 mt-0.5">Custo aprox: R$ 0,02 / pág</span>
             
             {/* Gatilho Box Compacto */}
             <div className="mt-2.5 flex items-center gap-2 rounded bg-gray-50 px-2.5 py-2 border border-gray-100">
@@ -104,7 +104,7 @@ export default function ProductCard({ product, brandName }) {
           </a>
           
           {/* Confiança */}
-          <div className="mt-3.5 flex items-center justify-center gap-4 text-[9px] font-semibold uppercase tracking-wider text-gray-400">
+          <div className="mt-3.5 flex items-center justify-center gap-4 text-[9px] font-semibold uppercase tracking-wider text-gray-500">
             <span className="flex items-center gap-1">🚚 Envio Imediato</span>
             <span className="h-3 w-[1px] bg-gray-200"></span>
             <span className="flex items-center gap-1">🛡️ NF-e Inclusa</span>

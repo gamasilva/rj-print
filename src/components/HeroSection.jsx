@@ -21,15 +21,17 @@ export default function HeroSection() {
         />
       </div>
 
-      {/* Watermark Logo */}
-      <div className="absolute inset-0 z-0 flex items-center justify-center opacity-[0.04] pointer-events-none sm:opacity-[0.06] -translate-y-20">
+      {/* Watermark Logo — LCP Element */}
+      <div className="absolute inset-0 z-0 flex items-center justify-center opacity-[0.04] pointer-events-none sm:opacity-[0.06] -translate-y-20" aria-hidden="true">
         <Image
-          src="/logo_apenas_imagem.png"
-          alt="Watermark RJ Print"
-          width={800}
-          height={800}
+          src="/logo_apenas_imagem.webp"
+          alt=""
+          role="presentation"
+          width={400}
+          height={400}
           className="h-[60vh] w-auto object-contain sm:h-[70vh]"
           priority
+          fetchPriority="high"
         />
       </div>
 
@@ -41,7 +43,7 @@ export default function HeroSection() {
 
       {/* ── Copy principal ── */}
       <div className="relative z-10 mx-auto max-w-7xl px-4 pt-10 sm:px-6 sm:pt-20 lg:px-8 flex-1 flex flex-col w-full justify-center">
-        <div className="text-center animate-fade-in mb-12 sm:mb-20">
+        <div className="text-center mb-12 sm:mb-20">
           {/* Headline */}
           <h1
             id="hero-heading"
@@ -71,7 +73,7 @@ export default function HeroSection() {
             ].map((badge) => (
               <div
                 key={badge.label}
-                className="flex-shrink-0 flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-bold text-[#C5CCD8] backdrop-blur-md sm:px-6 sm:py-3 sm:text-sm transition-all hover:bg-white/10"
+                className="flex-shrink-0 flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-bold text-[#C5CCD8] backdrop-blur-md sm:px-6 sm:py-3 sm:text-sm transition-colors hover:bg-white/10"
               >
                 <span className="text-sm sm:text-xl">{badge.icon}</span>
                 {badge.label}
