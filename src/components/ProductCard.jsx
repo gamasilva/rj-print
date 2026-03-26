@@ -32,36 +32,44 @@ export default function ProductCard({ product, brandName }) {
           {product.name}
         </h3>
         
-        {/* Rendimento / Qualidade */}
-        <p className="mt-1.5 text-xs font-medium text-gray-500 line-clamp-1">
-          {product.description || "Alto Rendimento | B2B"}
+        {/* Descrição Completa */}
+        <p className="mt-1.5 text-[11px] leading-relaxed text-gray-600">
+          {product.description || "Produto original de alto rendimento para uso B2B."}
         </p>
 
-        {/* Tags de Autenticidade + Produto */}
-        <div className="flex flex-wrap gap-1.5 mt-3 mb-3">
-          <span className="inline-flex items-center gap-1 rounded-md bg-blue-50 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-blue-700 border border-blue-100">
+        {/* Detalhes Técnicos - Rendimento, Custo por pág, etc. */}
+        <div className="mt-3.5 mb-3 w-full flex flex-col gap-1.5 rounded-xl bg-gray-50 p-3 border border-gray-100 text-[11px]">
+          {product.yieldAmount && (
+            <div className="flex justify-between items-center">
+              <span className="text-gray-500 font-medium">📄 Rendimento:</span>
+              <span className="text-gray-900 font-bold">{product.yieldAmount}</span>
+            </div>
+          )}
+          {product.costPerPage && (
+             <div className="flex justify-between items-center">
+               <span className="text-gray-500 font-medium">💰 Custo por folha:</span>
+               <span className="text-green-800 font-bold bg-green-100 px-1.5 py-0.5 rounded tracking-wide">{product.costPerPage}</span>
+             </div>
+          )}
+          {product.features && (
+            <div className="flex justify-between items-center">
+              <span className="text-gray-500 font-medium">✨ Diferencial:</span>
+              <span className="text-orange-600 font-bold max-w-[55%] truncate text-right" title={product.features}>{product.features}</span>
+            </div>
+          )}
+        </div>
+
+        {/* Tags de Autenticidade */}
+        <div className="flex gap-1.5 mb-4">
+          <span className="inline-flex items-center gap-1 rounded bg-blue-50 px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-blue-700 border border-blue-100">
             <svg className="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
             </svg>
             Original
           </span>
-          <span className="inline-flex items-center gap-1 rounded-md bg-cyan-50 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-cyan-700 border border-cyan-100">
+          <span className="inline-flex items-center gap-1 rounded bg-cyan-50 px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-cyan-700 border border-cyan-100">
             Genuíno
           </span>
-          {product.tags?.map((tag) => (
-            <span
-              key={tag}
-              className="inline-flex items-center rounded-md bg-gray-50 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-gray-600 border border-gray-100"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-
-        {/* Compatibilidade */}
-        <div className="inline-flex w-fit items-center gap-1.5 rounded-md border border-blue-100 bg-blue-50 px-2 py-1 text-[10px] text-blue-700 mb-3">
-          <span className="font-bold uppercase tracking-wider opacity-80">Para:</span>
-          <span className="font-semibold line-clamp-1">{product.tags?.[2] || "Modelos LaserJet/EcoTank"}</span>
         </div>
 
         {/* Preços */}
@@ -70,16 +78,15 @@ export default function ProductCard({ product, brandName }) {
             <span className="text-[11px] font-medium text-gray-500">Preço Unitário:</span>
             <div className="flex items-baseline gap-1.5">
               <span className="text-3xl font-black text-gray-900 tracking-tight">
-                R$ 39<span className="text-xl">,90</span>
+                R$ {product.price?.split(',')[0] || "39"}<span className="text-xl">,{product.price?.split(',')[1] || "90"}</span>
               </span>
               <span className="text-[10px] font-bold text-[#16A34A] uppercase bg-green-50 px-1.5 py-0.5 rounded">no Pix</span>
             </div>
-            <span className="text-[10px] font-medium text-gray-500 mt-0.5">Custo aprox: R$ 0,02 / pág</span>
             
             {/* Gatilho Box Compacto */}
-            <div className="mt-2.5 flex items-center gap-2 rounded bg-gray-50 px-2.5 py-2 border border-gray-100">
+            <div className="mt-2.5 flex items-center justify-between rounded bg-gray-50 px-2.5 py-2 border border-gray-100">
               <span className="text-[10px] uppercase font-bold text-gray-500">🛒 A partir de 10 un:</span>
-              <span className="text-[12px] font-black text-[#16A34A]">R$ 29,90 <span className="font-semibold opacity-80 text-[10px]">/cada</span></span>
+              <span className="text-[12px] font-black text-[#16A34A]">R$ {product.wholesalePrice || "29,90"} <span className="font-semibold opacity-80 text-[10px]">/cada</span></span>
             </div>
           </div>
         </div>

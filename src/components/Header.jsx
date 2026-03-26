@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 
 const WHATSAPP_NUMBER = "5521964338875";
 const WHATSAPP_MSG = encodeURIComponent(
@@ -18,33 +17,20 @@ export default function Header() {
   }, []);
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 flex justify-center w-full px-4 pt-4 sm:pt-6 pointer-events-none">
+    <div className="fixed top-0 left-0 right-0 z-50 hidden sm:flex justify-center w-full px-4 pt-6 pointer-events-none">
       <header
-        className={`pointer-events-auto w-full max-w-7xl transition-[background,box-shadow,padding,border] duration-300 rounded-full border ${
+        className={`pointer-events-auto transition-[background,box-shadow,padding,border] duration-300 rounded-full border border-white/10 ${
           scrolled 
-            ? "backdrop-blur-xl shadow-2xl py-2 px-4 sm:px-6 border-white/10 bg-[#1a1a1a]/90" 
-            : "py-3 px-4 sm:px-6 border-transparent bg-transparent"
+            ? "backdrop-blur-xl shadow-2xl py-2 px-6 sm:px-8 bg-[#1a1a1a]/90" 
+            : "backdrop-blur-md shadow-lg py-3 px-6 sm:px-8 bg-[#1a1a1a]/60"
         }`}
       >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-12 items-center justify-between sm:h-14">
-          {/* Logo */}
-          <a href="/" className="flex items-center gap-2 group" aria-label="Página inicial">
-            <Image
-              src="/logo_rjprint.webp"
-              alt="RJ Print - Soluções em Impressão"
-              width={180}
-              height={60}
-              className="h-10 w-auto sm:h-12 object-contain"
-              priority
-            />
-          </a>
-
-          {/* Navegação Desktop (Oculta no Mobile) */}
-          <nav className="hidden lg:flex items-center gap-8">
-            <a href="#produtos" className="text-sm font-semibold text-gray-300 hover:text-white transition-colors duration-200">Produtos</a>
+        <div className="flex h-12 items-center justify-center gap-6 sm:gap-8 sm:h-14">
+          {/* Navegação Desktop */}
+          <nav className="hidden lg:flex items-center gap-6 sm:gap-8">
+            <a href="#marcas" className="text-sm font-semibold text-gray-300 hover:text-white transition-colors duration-200">Produtos</a>
             <a href="#quem-somos" className="text-sm font-semibold text-gray-300 hover:text-white transition-colors duration-200">Quem Somos</a>
-            <a href="#logistica" className="text-sm font-semibold text-gray-300 hover:text-white transition-colors duration-200">Logística</a>
+            <a href="#logistica" className="text-sm font-semibold text-gray-300 hover:text-white transition-colors duration-200">Entrega</a>
             <a href="#depoimentos" className="text-sm font-semibold text-gray-300 hover:text-white transition-colors duration-200">Clientes</a>
             <a href="#beneficios" className="text-sm font-semibold text-gray-300 hover:text-white transition-colors duration-200">Diferenciais</a>
           </nav>
@@ -54,7 +40,7 @@ export default function Header() {
             href={`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MSG}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-whatsapp px-4 py-2.5 text-sm font-bold text-[#F7F8FA] shadow-lg transition-[background,transform,box-shadow] duration-200 hover:bg-whatsapp-dark hover:shadow-whatsapp/30 hover:scale-105 active:scale-95 sm:px-6 sm:text-base"
+            className="inline-flex items-center gap-2 rounded-full bg-whatsapp px-6 py-2.5 text-sm font-bold text-[#F7F8FA] shadow-lg transition-[background,transform,box-shadow] duration-200 hover:bg-whatsapp-dark hover:shadow-whatsapp/30 hover:scale-105 active:scale-95 sm:text-base"
             aria-label="Fazer cotação pelo WhatsApp"
           >
             <svg
@@ -70,8 +56,7 @@ export default function Header() {
             <span className="sm:hidden">Cotar</span>
           </a>
         </div>
-      </div>
-    </header>
+      </header>
     </div>
   );
 }
