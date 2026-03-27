@@ -4,18 +4,7 @@ import Image from "next/image";
 
 export default function GuaranteeSection() {
   return (
-    <section className="relative overflow-hidden bg-[#121217] py-20 sm:py-32" id="garantia">
-      {/* Background Decor */}
-      <div className="absolute inset-0 opacity-[0.03]" aria-hidden="true">
-        <div 
-          className="absolute inset-0"
-          style={{ 
-            backgroundImage: "radial-gradient(circle at 1px 1px, rgba(234, 88, 12, 0.6) 1px, transparent 0)", 
-            backgroundSize: "48px 48px" 
-          }} 
-        />
-      </div>
-      
+    <section className="relative py-20 sm:py-32 bg-transparent" id="garantia">
       {/* Orb Blur Esquerdo */}
       <div className="absolute -left-32 top-0 h-96 w-96 rounded-full bg-orange-500/10 blur-[100px] pointer-events-none" />
 

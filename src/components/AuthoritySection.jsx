@@ -8,9 +8,10 @@ export default function AuthoritySection() {
   );
 
   return (
-    <section id="logistica" className="w-full bg-gradient-to-b from-[#1a1a1a] to-[#121212] py-10 sm:py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-3 relative z-10">
+    <section id="logistica" className="relative w-full py-16 sm:py-24">
+      <div className="absolute -top-32 -right-32 w-96 h-96 bg-cyan-500/10 blur-[120px] rounded-full pointer-events-none" aria-hidden="true" />
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
           
           {/* Coluna 1: Logística */}
           <div className="flex flex-col items-start text-left">

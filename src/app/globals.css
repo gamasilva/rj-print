@@ -17,16 +17,21 @@
   --color-border: #D5DAE3;
   --color-card: #FCFCFD;
 
-  --font-sans: var(--font-montserrat);}
+  --font-sans: var(--font-montserrat);
 
+  --animate-marquee: marquee 30s linear infinite;
+  
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(calc(-100% - 2.5rem)); } /* -100% minus the gap (10 gap-10 or gap-20 normally, using an approx average to loop smoothly) */
+  }
+}
 html {
   scroll-behavior: smooth;
 }
 
 body {
   font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
-  color: var(--color-text-primary);
-  background: var(--color-surface);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

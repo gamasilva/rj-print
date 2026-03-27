@@ -1,4 +1,5 @@
 import HeroSection from "@/components/HeroSection";
+import ClientsSection from "@/components/ClientsSection";
 import BrandsNavSection from "@/components/BrandsNavSection";
 import TrustSection from "@/components/TrustSection";
 import SocialProofSection from "@/components/SocialProofSection";
@@ -262,6 +263,8 @@ export default function Home() {
   return (
     <>
       <HeroSection />
+
+      <ClientsSection />
 
       <BrandsNavSection brandProducts={brandProducts} />
 

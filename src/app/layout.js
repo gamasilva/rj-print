@@ -83,12 +83,26 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-screen flex flex-col bg-surface">
+      <body className="min-h-screen flex flex-col text-[#E8ECF1] bg-[#0A0A0A] overflow-x-hidden">
+        {/* Fundo Fixo com o Gradiente da Garantia */}
+        <div className="fixed inset-0 bg-gradient-to-br from-[#1A1A1A] via-[#121212] to-[#0A0A0A] -z-20" aria-hidden="true" />
+        
+        {/* Grid Pattern Global - Estilo Garantia */}
+        <div className="fixed inset-0 opacity-20 pointer-events-none -z-10" aria-hidden="true">
+          <div 
+            className="absolute inset-0"
+            style={{ 
+              backgroundImage: "radial-gradient(circle at 2px 2px, rgba(234, 88, 12, 0.15) 1px, transparent 0)", 
+              backgroundSize: "32px 32px" 
+            }} 
+          />
+        </div>
+
         <a href="#conteudo-principal" className="skip-link">
           Pular para conteúdo principal
         </a>
         <Header />
-        <main id="conteudo-principal" className="flex-1">
+        <main id="conteudo-principal" className="flex-1 relative z-0">
           {children}
         </main>
         <Footer />

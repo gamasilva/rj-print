@@ -61,7 +61,7 @@ export default function TrustSection() {
   return (
     <section
       id="beneficios"
-      className="relative bg-gradient-to-b from-[#1a1a1a] to-[#0a0a0a] py-16 sm:py-28 overflow-hidden"
+      className="relative py-16 sm:py-28 overflow-hidden"
       aria-labelledby="trust-heading"
     >
       {/* Orbs decorativos */}

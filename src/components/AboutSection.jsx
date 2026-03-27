@@ -1,7 +1,10 @@
+import Image from "next/image";
+
 export default function AboutSection() {
   return (
-    <section id="quem-somos" className="bg-gradient-to-b from-[#1a1a1a] to-[#121212] py-16 sm:py-24" aria-labelledby="about-heading">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="quem-somos" className="relative py-16 sm:py-24" aria-labelledby="about-heading">
+      <div className="absolute -bottom-32 -right-32 w-[30rem] h-[30rem] bg-blue-600/10 blur-[120px] rounded-full pointer-events-none" aria-hidden="true" />
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           
           {/* Texto Sobre Nós — Reduzido */}
@@ -22,11 +25,10 @@ export default function AboutSection() {
             </div>
           </div>
 
-          {/* Visual — Sem placeholder externo */}
-          <div className="relative w-full aspect-[4/3] overflow-hidden rounded-2xl border border-white/5 shadow-2xl"
-            style={{ background: "linear-gradient(135deg, #1E1E24 0%, #0d1117 50%, #1a2332 100%)" }}
-          >
-            {/* Grid decorativo simulando logística */}
+          {/* Visual — Moldura com Logo */}
+          <div className="relative w-full aspect-[4/3] overflow-hidden rounded-2xl border border-white/5 shadow-2xl flex items-center justify-center p-8 bg-gradient-to-br from-[#1E1E24] via-[#0d1117] to-[#1a2332]">
+            
+            {/* Grid decorativo */}
             <div className="absolute inset-0 opacity-10" aria-hidden="true">
               <div className="absolute inset-0" style={{
                 backgroundImage: "radial-gradient(circle at 2px 2px, rgba(59,130,246,0.4) 1px, transparent 0)",
@@ -34,27 +36,27 @@ export default function AboutSection() {
               }} />
             </div>
             
-            {/* Ícone central */}
-            <div className="absolute inset-0 flex items-center justify-center" aria-hidden="true">
-              <div className="text-center">
-                <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-2xl bg-blue-500/10 text-blue-400 sm:h-24 sm:w-24">
-                  <svg className="h-10 w-10 sm:h-12 sm:w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
-                  </svg>
-                </div>
-                <p className="text-lg font-bold text-white/80 sm:text-xl">Logística Nacional</p>
-                <p className="text-sm text-gray-500 mt-1">Expedição diária para todo o Brasil</p>
-              </div>
+            {/* Foto da Logo na Moldura */}
+            <div className="relative z-10 w-full max-w-sm animate-pulse-slow">
+              <Image 
+                src="/logo_rjprint.webp" 
+                alt="RJ Print Logo"
+                width={400}
+                height={150}
+                className="w-full h-auto object-contain drop-shadow-[0_10px_30px_rgba(59,130,246,0.2)]"
+                loading="lazy"
+              />
             </div>
 
-            {/* Overlay gradiente */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#121217]/80 to-transparent pointer-events-none" />
-            <div className="absolute bottom-6 left-6 right-6">
+            {/* Overlay gradiente inferior para profundidade */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/90 via-transparent to-transparent pointer-events-none" />
+            
+            <div className="absolute bottom-6 left-6 right-6 z-20">
               <p className="text-sm font-bold text-white uppercase tracking-widest">
-                Logística Premium
+                RJ Print
               </p>
               <p className="text-xs text-[#9CA3AF] mt-1">
-                Matriz de Expedição Nacional
+                Mais do que suprimentos, resultados reais.
               </p>
             </div>
           </div>

@@ -3,23 +3,9 @@ import Image from "next/image";
 export default function HeroSection() {
   return (
     <section
-      className="relative overflow-hidden min-h-[100dvh] sm:min-h-[80vh] flex flex-col justify-center"
-      style={{
-        background: "linear-gradient(180deg, #1E1E24 0%, #121217 100%)",
-      }}
+      className="relative min-h-[100dvh] sm:min-h-[80vh] flex flex-col justify-center bg-transparent"
       aria-labelledby="hero-heading"
     >
-      {/* Background pattern sutil */}
-      <div className="absolute inset-0 opacity-[0.03]" aria-hidden="true">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 1px 1px, rgba(200,210,230,0.6) 1px, transparent 0)",
-            backgroundSize: "48px 48px",
-          }}
-        />
-      </div>
 
       {/* Watermark Logo — LCP Element */}
       <div className="absolute inset-0 z-0 flex items-center justify-center opacity-[0.04] pointer-events-none sm:opacity-[0.06] -translate-y-20" aria-hidden="true">
