@@ -33,24 +33,24 @@ export default function BrandSection({ brandId, brandName, subtitle, products, e
   return (
     <section
       id={brandId}
-      className={`scroll-mt-20 py-14 sm:py-20 ${even ? "bg-surface" : "bg-card"}`}
+      className={`scroll-mt-20 py-14 sm:py-20 ${even ? "bg-theme-bg-end" : "bg-theme-bg-start"}`}
       aria-labelledby={`${brandId}-heading`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header da seção */}
         <div className="mb-10 text-center sm:mb-14">
           <span
-            className={`mb-3 inline-flex items-center gap-1.5 rounded-full ${colors.badge} px-4 py-1 text-xs font-bold uppercase tracking-wider text-[#F7F8FA]`}
+            className={`mb-3 inline-flex items-center gap-1.5 rounded-full ${colors.badge} px-4 py-1 text-xs font-bold uppercase tracking-wider text-white`}
           >
             {brandName}
           </span>
           <h2
             id={`${brandId}-heading`}
-            className="mt-3 text-2xl font-extrabold tracking-tight text-text-primary sm:text-3xl lg:text-4xl"
+            className="mt-3 text-2xl font-extrabold tracking-tight text-theme-text-primary sm:text-3xl lg:text-4xl"
           >
             Linha Completa {brandName}
           </h2>
-          <p className="mx-auto mt-3 max-w-lg text-sm text-text-secondary sm:text-base">
+          <p className="mx-auto mt-3 max-w-lg text-sm text-theme-text-secondary sm:text-base">
             {subtitle}
           </p>
           <div

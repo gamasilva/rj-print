@@ -9,13 +9,13 @@ export default function AuthoritySection() {
 
   return (
     <section id="logistica" className="relative w-full py-16 sm:py-24">
-      <div className="absolute -top-32 -right-32 w-96 h-96 bg-cyan-500/10 blur-[120px] rounded-full pointer-events-none" aria-hidden="true" />
+      <div className="absolute -top-32 -right-32 w-96 h-96 bg-theme-accent-light/10 blur-[120px] rounded-full pointer-events-none" aria-hidden="true" />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
           
           {/* Coluna 1: Logística */}
           <div className="flex flex-col items-start text-left">
-            <div className="mb-6 rounded-2xl bg-white/5 p-4 text-[#E8ECF1]">
+            <div className="mb-6 rounded-2xl bg-theme-bg-glass p-4 text-theme-text-primary">
               <svg
                 className="h-10 w-10 sm:h-12 sm:w-12"
                 fill="none"
@@ -31,17 +31,17 @@ export default function AuthoritySection() {
                 />
               </svg>
             </div>
-            <h2 className="mb-4 text-2xl font-bold text-white">
+            <h2 className="mb-4 text-2xl font-bold text-theme-text-primary">
               Entregas 100% Rastreadas
             </h2>
-            <p className="text-base text-gray-400 leading-relaxed">
+            <p className="text-base text-theme-text-muted leading-relaxed">
               Trabalhamos com as melhores e mais rápidas transportadoras do Brasil. Acompanhe seu pedido em tempo real, da nossa expedição até a sua porta.
             </p>
           </div>
 
           {/* Coluna 2: Estatísticas */}
           <div className="flex flex-col items-start text-left">
-            <div className="mb-6 rounded-2xl bg-white/5 p-4 text-[#E8ECF1]">
+            <div className="mb-6 rounded-2xl bg-theme-bg-glass p-4 text-theme-text-primary">
               <svg
                 className="h-10 w-10 sm:h-12 sm:w-12"
                 fill="none"
@@ -57,29 +57,29 @@ export default function AuthoritySection() {
                 />
               </svg>
             </div>
-            <h2 className="mb-6 text-2xl font-bold text-white">
+            <h2 className="mb-6 text-2xl font-bold text-theme-text-primary">
               Nossos Números
             </h2>
             
             <div className="flex flex-col gap-6 w-full">
-              <div className="border-l-4 border-gray-700 pl-4 py-1">
-                <p className="text-4xl font-black text-white">+15.000</p>
-                <p className="mt-1 text-sm font-medium text-gray-400 uppercase tracking-wide">Entregas no Ano</p>
+              <div className="border-l-4 border-theme-border/50 pl-4 py-1">
+                <p className="text-4xl font-black text-theme-text-primary">+15.000</p>
+                <p className="mt-1 text-sm font-medium text-theme-text-muted uppercase tracking-wide">Entregas no Ano</p>
               </div>
-              <div className="border-l-4 border-gray-700 pl-4 py-1">
-                <p className="text-4xl font-black text-white">+50.000</p>
-                <p className="mt-1 text-sm font-medium text-gray-400 uppercase tracking-wide">Suprimentos Vendidos</p>
+              <div className="border-l-4 border-theme-border/50 pl-4 py-1">
+                <p className="text-4xl font-black text-theme-text-primary">+50.000</p>
+                <p className="mt-1 text-sm font-medium text-theme-text-muted uppercase tracking-wide">Suprimentos Vendidos</p>
               </div>
-              <div className="border-l-4 border-gray-700 pl-4 py-1">
-                <p className="text-4xl font-black text-white">+10 Milhões</p>
-                <p className="mt-1 text-sm font-medium text-gray-400 uppercase tracking-wide">De Páginas Impressas</p>
+              <div className="border-l-4 border-theme-border/50 pl-4 py-1">
+                <p className="text-4xl font-black text-theme-text-primary">+10 Milhões</p>
+                <p className="mt-1 text-sm font-medium text-theme-text-muted uppercase tracking-wide">De Páginas Impressas</p>
               </div>
             </div>
           </div>
 
           {/* Coluna 3: Atendimento */}
           <div className="flex flex-col items-start text-left">
-            <div className="mb-6 rounded-2xl bg-white/5 p-4 text-[#E8ECF1]">
+            <div className="mb-6 rounded-2xl bg-theme-bg-glass p-4 text-theme-text-primary">
               <svg
                 className="h-10 w-10 sm:h-12 sm:w-12"
                 fill="none"
@@ -95,10 +95,10 @@ export default function AuthoritySection() {
                 />
               </svg>
             </div>
-            <h2 className="mb-4 text-2xl font-bold text-white">
+            <h2 className="mb-4 text-2xl font-bold text-theme-text-primary">
               Atendimento Especializado
             </h2>
-            <p className="mb-8 text-base text-gray-400 leading-relaxed flex-grow">
+            <p className="mb-8 text-base text-theme-text-muted leading-relaxed flex-grow">
               Nada de robôs. Fale com um especialista humano que entende exatamente o que a sua impressora precisa e resolve sua demanda na hora.
             </p>
             
@@ -107,7 +107,7 @@ export default function AuthoritySection() {
               href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMsg}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#25D366] px-6 py-4 text-sm sm:text-base font-bold text-white shadow-lg transition-all duration-300 hover:bg-[#1DA851] hover:shadow-[#25D366]/20 active:scale-95 w-full sm:w-auto"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-whatsapp px-6 py-4 text-sm sm:text-base font-bold text-white shadow-lg transition-all duration-300 hover:bg-whatsapp-dark hover:shadow-whatsapp/20 active:scale-95 w-full sm:w-auto"
             >
               <svg
                 className="h-5 w-5 fill-current"

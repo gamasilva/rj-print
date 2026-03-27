@@ -65,25 +65,25 @@ export default function TrustSection() {
       aria-labelledby="trust-heading"
     >
       {/* Orbs decorativos */}
-      <div className="absolute top-1/4 -left-20 w-60 h-60 bg-blue-500/5 rounded-full blur-3xl" aria-hidden="true" />
-      <div className="absolute bottom-1/4 -right-20 w-80 h-80 bg-cyan-500/5 rounded-full blur-3xl" aria-hidden="true" />
+      <div className="absolute top-1/4 -left-20 w-60 h-60 bg-theme-accent/5 rounded-full blur-3xl" aria-hidden="true" />
+      <div className="absolute bottom-1/4 -right-20 w-80 h-80 bg-theme-accent-light/5 rounded-full blur-3xl" aria-hidden="true" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 sm:mb-20">
-          <span className="inline-flex items-center gap-2 rounded-full bg-white/5 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-blue-400 border border-white/10 mb-6">
-            <span className="h-1.5 w-1.5 rounded-full bg-blue-400 animate-pulse" />
+          <span className="inline-flex items-center gap-2 rounded-full bg-theme-bg-glass px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-theme-accent border border-theme-border/50 mb-6">
+            <span className="h-1.5 w-1.5 rounded-full bg-theme-accent animate-pulse" />
             Diferenciais Competitivos
           </span>
           <h2
             id="trust-heading"
-            className="text-3xl font-black tracking-tight text-[#E8ECF1] sm:text-4xl lg:text-5xl"
+            className="text-3xl font-black tracking-tight text-theme-text-primary sm:text-4xl lg:text-5xl"
           >
             Por que somos o parceiro{" "}
-            <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-theme-accent to-theme-accent-light bg-clip-text text-transparent">
               estratégico do seu negócio?
             </span>
           </h2>
-          <p className="mx-auto mt-6 max-w-3xl text-base text-[#9BA3B5] sm:text-lg leading-relaxed">
+          <p className="mx-auto mt-6 max-w-3xl text-base text-theme-text-muted sm:text-lg leading-relaxed">
             Não somos apenas um fornecedor. Somos a engrenagem que mantém sua operação de impressão funcionando com máxima eficiência, segurança e economia.
           </p>
         </div>
@@ -92,30 +92,30 @@ export default function TrustSection() {
           {trustItems.map((item, index) => (
             <div
               key={index}
-              className="group relative rounded-3xl border border-[#2A3243]/80 bg-gradient-to-b from-[#1A2332]/80 to-[#141E2B]/60 p-8 backdrop-blur-sm transition-all duration-500 hover:bg-[#1E2B3C]/90 hover:border-blue-500/20 hover:shadow-2xl hover:shadow-blue-500/5 hover:-translate-y-2"
+              className="group relative rounded-3xl border border-theme-border/80 bg-gradient-to-b from-theme-bg-card to-theme-bg-glass p-8 backdrop-blur-sm transition-all duration-500 hover:bg-theme-bg-card/90 hover:border-theme-accent/20 hover:shadow-2xl hover:shadow-theme-accent/5 hover:-translate-y-2"
             >
               {/* Stat highlight */}
               <div className="absolute top-6 right-6 text-right">
-                <p className="text-2xl font-black text-blue-400/80 group-hover:text-blue-400 transition-colors">
+                <p className="text-2xl font-black text-theme-accent/80 group-hover:text-theme-accent transition-colors">
                   {item.stat}
                 </p>
-                <p className="text-[9px] font-bold uppercase tracking-widest text-gray-600 group-hover:text-gray-500 transition-colors">
+                <p className="text-[9px] font-bold uppercase tracking-widest text-gray-500 group-hover:text-theme-text-muted transition-colors">
                   {item.statLabel}
                 </p>
               </div>
 
-              <div className="mb-6 inline-flex rounded-2xl bg-gradient-to-br from-blue-500/20 to-cyan-500/10 p-4 text-blue-400 transition-all group-hover:from-blue-500/30 group-hover:to-cyan-500/20 group-hover:shadow-lg group-hover:shadow-blue-500/10">
+              <div className="mb-6 inline-flex rounded-2xl bg-gradient-to-br from-theme-accent/20 to-theme-accent-light/10 p-4 text-theme-accent transition-all group-hover:from-theme-accent/30 group-hover:to-theme-accent-light/20 group-hover:shadow-lg group-hover:shadow-theme-accent/10">
                 {item.icon}
               </div>
-              <h3 className="text-lg font-black text-[#E0E4EA] mb-3 sm:text-xl">
+              <h3 className="text-lg font-black text-theme-text-primary mb-3 sm:text-xl">
                 {item.title}
               </h3>
-              <p className="text-sm leading-relaxed text-[#8690A2] group-hover:text-[#9BA3B5] transition-colors">
+              <p className="text-sm leading-relaxed text-theme-text-muted group-hover:text-theme-text-secondary transition-colors">
                 {item.description}
               </p>
               
               {/* Bottom accent line */}
-              <div className="mt-6 h-0.5 w-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full transition-all duration-500 group-hover:w-full" />
+              <div className="mt-6 h-0.5 w-0 bg-gradient-to-r from-theme-accent to-theme-accent-light rounded-full transition-all duration-500 group-hover:w-full" />
             </div>
           ))}
         </div>

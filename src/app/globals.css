@@ -1,29 +1,75 @@
 @import "tailwindcss";
 
+:root {
+  /* Tema 1: Atual (Dark) */
+  --theme-bg-start: #1A1A1A;
+  --theme-bg-mid: #121212;
+  --theme-bg-end: #0A0A0A;
+  --theme-text-primary: #E8ECF1;
+  --theme-text-secondary: #D5DAE6;
+  --theme-text-muted: #8690A2;
+  --theme-accent: #60A5FA; /* blue-400 */
+  --theme-accent-light: #22D3EE; /* cyan-400 */
+  --theme-border: rgba(255, 255, 255, 0.1);
+  --theme-bg-card: rgba(255, 255, 255, 0.05);
+  --theme-bg-glass: rgba(255, 255, 255, 0.03); 
+  --theme-pattern-color: rgba(234, 88, 12, 0.15);
+}
+
+html.theme-light-blue {
+  /* Tema 2: Claro Azul */
+  --theme-bg-start: #F8FAFC;
+  --theme-bg-mid: #F1F5F9;
+  --theme-bg-end: #E2E8F0;
+  --theme-text-primary: #0F172A;
+  --theme-text-secondary: #334155;
+  --theme-text-muted: #64748B;
+  --theme-accent: #2563EB;
+  --theme-accent-light: #3B82F6;
+  --theme-border: rgba(15, 23, 42, 0.1);
+  --theme-bg-card: rgba(255, 255, 255, 0.8);
+  --theme-bg-glass: rgba(255, 255, 255, 0.6);
+  --theme-pattern-color: rgba(37, 99, 235, 0.1);
+}
+
+html.theme-light-orange {
+  /* Tema 3: Claro Laranja */
+  --theme-bg-start: #FFFBF7;
+  --theme-bg-mid: #FFF5EC;
+  --theme-bg-end: #FFEDD5;
+  --theme-text-primary: #431407;
+  --theme-text-secondary: #7C2D12;
+  --theme-text-muted: #9A3412;
+  --theme-accent: #EA580C;
+  --theme-accent-light: #F97316;
+  --theme-border: rgba(67, 20, 7, 0.1);
+  --theme-bg-card: rgba(255, 255, 255, 0.8);
+  --theme-bg-glass: rgba(255, 255, 255, 0.6);
+  --theme-pattern-color: rgba(234, 88, 12, 0.15);
+}
+
 @theme inline {
-  /* Paleta Premium — Cinzas azulados, sem preto/branco puro */
-  --color-navy: #101828;
-  --color-navy-light: #1D2939;
-  --color-navy-dark: #0C111D;
-  --color-accent: #2563EB;
-  --color-accent-light: #3B82F6;
+  --color-theme-bg-start: var(--theme-bg-start);
+  --color-theme-bg-mid: var(--theme-bg-mid);
+  --color-theme-bg-end: var(--theme-bg-end);
+  --color-theme-text-primary: var(--theme-text-primary);
+  --color-theme-text-secondary: var(--theme-text-secondary);
+  --color-theme-text-muted: var(--theme-text-muted);
+  --color-theme-accent: var(--theme-accent);
+  --color-theme-accent-light: var(--theme-accent-light);
+  --color-theme-border: var(--theme-border);
+  --color-theme-bg-card: var(--theme-bg-card);
+  --color-theme-bg-glass: var(--theme-bg-glass);
+
+  /* Mantendo as cores globais e de animação existentes */
   --color-whatsapp: #25D366;
   --color-whatsapp-dark: #1EBE5A;
-  --color-surface: #F7F8FA;
-  --color-surface-alt: #ECEEF2;
-  --color-text-primary: #1A1F2E;
-  --color-text-secondary: #3D4556;
-  --color-text-muted: #8690A2;
-  --color-border: #D5DAE3;
-  --color-card: #FCFCFD;
-
   --font-sans: var(--font-montserrat);
-
   --animate-marquee: marquee 30s linear infinite;
   
   @keyframes marquee {
     from { transform: translateX(0); }
-    to { transform: translateX(calc(-100% - 2.5rem)); } /* -100% minus the gap (10 gap-10 or gap-20 normally, using an approx average to loop smoothly) */
+    to { transform: translateX(calc(-100% - 2.5rem)); }
   }
 }
 html {

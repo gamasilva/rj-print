@@ -32,19 +32,19 @@ export default function SocialProofSection() {
       className="relative py-16 sm:py-24"
       aria-labelledby="social-proof-heading"
     >
-      <div className="absolute top-1/2 -left-32 -translate-y-1/2 w-[30rem] h-[30rem] bg-cyan-500/10 blur-[120px] rounded-full pointer-events-none" aria-hidden="true" />
+      <div className="absolute top-1/2 -left-32 -translate-y-1/2 w-[30rem] h-[30rem] bg-theme-accent-light/10 blur-[120px] rounded-full pointer-events-none" aria-hidden="true" />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-10 sm:mb-16">
           <h2
             id="social-proof-heading"
-            className="text-2xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl"
+            className="text-2xl font-extrabold tracking-tight text-theme-text-primary sm:text-4xl lg:text-5xl"
           >
             Aprovado por quem{" "}
-            <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-theme-accent to-theme-accent-light bg-clip-text text-transparent">
               entende de impressão
             </span>
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-base text-gray-400 sm:text-lg">
+          <p className="mx-auto mt-4 max-w-2xl text-base text-theme-text-muted sm:text-lg">
             Empresas de todo o Brasil confiam na nossa qualidade e procedência.
           </p>
 
@@ -70,7 +70,7 @@ export default function SocialProofSection() {
           {reviews.map((review) => (
             <div
               key={review.id}
-              className="flex flex-col rounded-2xl sm:rounded-3xl bg-[#1A2332]/50 p-6 sm:p-8 shadow-xl shadow-black/20 border border-[#2A3243]/80 backdrop-blur-sm transition-[box-shadow,transform] duration-300 hover:shadow-2xl hover:shadow-blue-500/10 hover:border-blue-500/30 hover:-translate-y-1"
+              className="flex flex-col rounded-2xl sm:rounded-3xl bg-theme-bg-card p-6 sm:p-8 shadow-xl shadow-black/20 border border-theme-border/80 backdrop-blur-sm transition-[box-shadow,transform] duration-300 hover:shadow-2xl hover:shadow-theme-accent/10 hover:border-theme-accent/30 hover:-translate-y-1"
             >
               {/* Estrelas */}
               <div className="flex gap-1 text-yellow-400 mb-4 sm:mb-6" role="img" aria-label={`Avaliação de ${review.rating} estrelas`}>
@@ -82,12 +82,12 @@ export default function SocialProofSection() {
               </div>
 
               {/* Depoimento */}
-              <blockquote className="flex-1 text-sm sm:text-base italic leading-relaxed text-gray-300">
+              <blockquote className="flex-1 text-sm sm:text-base italic leading-relaxed text-theme-text-secondary">
                 &ldquo;{review.text}&rdquo;
               </blockquote>
 
               {/* Cliente */}
-              <div className="mt-6 sm:mt-8 flex items-center gap-4 border-t border-[#2A3243]/80 pt-4 sm:pt-6">
+              <div className="mt-6 sm:mt-8 flex items-center gap-4 border-t border-theme-border/80 pt-4 sm:pt-6">
                 <img 
                   src={review.image} 
                   alt={`Foto de ${review.name}`}
@@ -98,8 +98,8 @@ export default function SocialProofSection() {
                   decoding="async"
                 />
                 <div>
-                  <div className="text-sm font-bold text-white">{review.name}</div>
-                  <div className="text-xs font-medium text-gray-400">{review.role}</div>
+                  <div className="text-sm font-bold text-theme-text-primary">{review.name}</div>
+                  <div className="text-xs font-medium text-theme-text-muted">{review.role}</div>
                 </div>
               </div>
             </div>

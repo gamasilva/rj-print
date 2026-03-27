@@ -19,20 +19,20 @@ export default function Header() {
   return (
     <div className="fixed top-0 left-0 right-0 z-50 hidden sm:flex justify-center w-full px-4 pt-6 pointer-events-none">
       <header
-        className={`pointer-events-auto transition-[background,box-shadow,padding,border] duration-300 rounded-full border border-white/10 ${
-          scrolled 
-            ? "backdrop-blur-xl shadow-2xl py-2 px-6 sm:px-8 bg-[#1a1a1a]/90" 
-            : "backdrop-blur-md shadow-lg py-3 px-6 sm:px-8 bg-[#1a1a1a]/60"
+        className={`pointer-events-auto transition-[background,box-shadow,padding,border] duration-300 rounded-full border border-theme-border ${
+           scrolled 
+            ? "backdrop-blur-xl shadow-2xl py-2 px-6 sm:px-8 bg-theme-bg-end/90" 
+            : "backdrop-blur-md shadow-lg py-3 px-6 sm:px-8 bg-theme-bg-end/60"
         }`}
       >
         <div className="flex h-12 items-center justify-center gap-6 sm:gap-8 sm:h-14">
           {/* Navegação Desktop */}
           <nav className="hidden lg:flex items-center gap-6 sm:gap-8">
-            <a href="#marcas" className="text-sm font-semibold text-gray-300 hover:text-white transition-colors duration-200">Produtos</a>
-            <a href="#quem-somos" className="text-sm font-semibold text-gray-300 hover:text-white transition-colors duration-200">Quem Somos</a>
-            <a href="#logistica" className="text-sm font-semibold text-gray-300 hover:text-white transition-colors duration-200">Entrega</a>
-            <a href="#depoimentos" className="text-sm font-semibold text-gray-300 hover:text-white transition-colors duration-200">Clientes</a>
-            <a href="#beneficios" className="text-sm font-semibold text-gray-300 hover:text-white transition-colors duration-200">Diferenciais</a>
+            <a href="#marcas" className="text-sm font-semibold text-theme-text-secondary hover:text-theme-text-primary transition-colors duration-200">Produtos</a>
+            <a href="#quem-somos" className="text-sm font-semibold text-theme-text-secondary hover:text-theme-text-primary transition-colors duration-200">Quem Somos</a>
+            <a href="#logistica" className="text-sm font-semibold text-theme-text-secondary hover:text-theme-text-primary transition-colors duration-200">Entrega</a>
+            <a href="#depoimentos" className="text-sm font-semibold text-theme-text-secondary hover:text-theme-text-primary transition-colors duration-200">Clientes</a>
+            <a href="#beneficios" className="text-sm font-semibold text-theme-text-secondary hover:text-theme-text-primary transition-colors duration-200">Diferenciais</a>
           </nav>
 
           {/* CTA WhatsApp */}
@@ -40,7 +40,7 @@ export default function Header() {
             href={`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MSG}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-whatsapp px-6 py-2.5 text-sm font-bold text-[#F7F8FA] shadow-lg transition-[background,transform,box-shadow] duration-200 hover:bg-whatsapp-dark hover:shadow-whatsapp/30 hover:scale-105 active:scale-95 sm:text-base"
+            className="inline-flex items-center gap-2 rounded-full bg-whatsapp px-6 py-2.5 text-sm font-bold text-white shadow-lg transition-[background,transform,box-shadow] duration-200 hover:bg-whatsapp-dark hover:shadow-whatsapp/30 hover:scale-105 active:scale-95 sm:text-base"
             aria-label="Fazer cotação pelo WhatsApp"
           >
             <svg

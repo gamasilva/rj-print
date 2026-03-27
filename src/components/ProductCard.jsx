@@ -8,7 +8,7 @@ export default function ProductCard({ product, brandName }) {
   );
 
   return (
-    <article className="group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#1E1E24]/60 backdrop-blur-md p-5 shadow-sm transition-[box-shadow,border-color,transform] duration-300 hover:shadow-xl hover:shadow-orange-500/10 hover:border-white/20 hover:-translate-y-1">
+    <article className="group flex flex-col overflow-hidden rounded-2xl border border-theme-border bg-theme-bg-card backdrop-blur-md p-5 shadow-sm transition-[box-shadow,border-color,transform] duration-300 hover:shadow-xl hover:shadow-theme-accent/10 hover:border-theme-border/80 hover:-translate-y-1">
       
       {/* Imagem do Produto */}
       <div className="relative mb-5 aspect-[4/3] w-full overflow-hidden rounded-xl bg-white flex items-center justify-center p-4">
@@ -21,40 +21,40 @@ export default function ProductCard({ product, brandName }) {
           loading="lazy"
         />
         {/* Badge Atacado */}
-        <span className="absolute top-2 left-2 rounded text-[10px] font-bold uppercase tracking-widest text-[#F97316] bg-[#FFF7ED] px-2 py-1 shadow-sm border border-[#FFEDD5]">
-          Atacado
+        <span className="absolute top-2 left-2 rounded text-[10px] font-bold uppercase tracking-widest text-theme-accent bg-theme-accent/10 px-2 py-1 shadow-sm border border-theme-accent/20">
+          Pronta Entrega
         </span>
       </div>
 
       <div className="flex flex-1 flex-col">
         {/* Título */}
-        <h3 className="text-base font-bold text-white leading-snug line-clamp-2 min-h-[2.5rem]">
+        <h3 className="text-base font-bold text-theme-text-primary leading-snug line-clamp-2 min-h-[2.5rem]">
           {product.name}
         </h3>
         
         {/* Descrição Completa */}
-        <p className="mt-1.5 text-[11px] leading-relaxed text-gray-400">
+        <p className="mt-1.5 text-[11px] leading-relaxed text-theme-text-muted">
           {product.description || "Produto original de alto rendimento para uso B2B."}
         </p>
 
         {/* Detalhes Técnicos - Rendimento, Custo por pág, etc. */}
-        <div className="mt-3.5 mb-3 w-full flex flex-col gap-1.5 rounded-xl bg-white/5 border border-white/5 p-3 text-[11px]">
+        <div className="mt-3.5 mb-3 w-full flex flex-col gap-1.5 rounded-xl bg-theme-bg-glass border border-theme-border/50 p-3 text-[11px]">
           {product.yieldAmount && (
             <div className="flex justify-between items-center">
-              <span className="text-gray-400 font-medium">📄 Rendimento:</span>
-              <span className="text-gray-200 font-bold">{product.yieldAmount}</span>
+              <span className="text-theme-text-muted font-medium">📄 Rendimento:</span>
+              <span className="text-theme-text-secondary font-bold">{product.yieldAmount}</span>
             </div>
           )}
           {product.costPerPage && (
              <div className="flex justify-between items-center">
-               <span className="text-gray-400 font-medium">💰 Custo por folha:</span>
-               <span className="text-green-400 font-bold bg-green-500/10 px-1.5 py-0.5 rounded tracking-wide">{product.costPerPage}</span>
+               <span className="text-theme-text-muted font-medium">💰 Custo por folha:</span>
+               <span className="text-green-500 font-bold bg-green-500/10 px-1.5 py-0.5 rounded tracking-wide">{product.costPerPage}</span>
              </div>
           )}
           {product.features && (
             <div className="flex justify-between items-center">
-              <span className="text-gray-400 font-medium">✨ Diferencial:</span>
-              <span className="text-orange-400 font-bold max-w-[55%] truncate text-right" title={product.features}>{product.features}</span>
+              <span className="text-theme-text-muted font-medium">✨ Diferencial:</span>
+              <span className="text-orange-500 font-bold max-w-[55%] truncate text-right" title={product.features}>{product.features}</span>
             </div>
           )}
         </div>
@@ -73,20 +73,20 @@ export default function ProductCard({ product, brandName }) {
         </div>
 
         {/* Preços */}
-        <div className="mt-auto border-t border-white/10 pt-3 mb-4">
+        <div className="mt-auto border-t border-theme-border/50 pt-3 mb-4">
           <div className="flex flex-col gap-0.5">
-            <span className="text-[11px] font-medium text-gray-400">Preço Unitário:</span>
+            <span className="text-[11px] font-medium text-theme-text-muted">Preço Unitário:</span>
             <div className="flex items-baseline gap-1.5">
-              <span className="text-3xl font-black text-white tracking-tight">
+              <span className="text-3xl font-black text-theme-text-primary tracking-tight">
                 R$ {product.price?.split(',')[0] || "39"}<span className="text-xl">,{product.price?.split(',')[1] || "90"}</span>
               </span>
-              <span className="text-[10px] font-bold text-green-400 uppercase bg-green-500/10 px-1.5 py-0.5 rounded border border-green-500/20">no Pix</span>
+              <span className="text-[10px] font-bold text-green-500 uppercase bg-green-500/10 px-1.5 py-0.5 rounded border border-green-500/20">no Pix</span>
             </div>
             
             {/* Gatilho Box Compacto */}
-            <div className="mt-2.5 flex items-center justify-between rounded bg-white/5 px-2.5 py-2 border border-white/5">
-              <span className="text-[10px] uppercase font-bold text-gray-400">🛒 A partir de 10 un:</span>
-              <span className="text-[12px] font-black text-green-400">R$ {product.wholesalePrice || "29,90"} <span className="font-semibold opacity-80 text-[10px] text-gray-400">/cada</span></span>
+            <div className="mt-2.5 flex items-center justify-between rounded bg-theme-bg-glass px-2.5 py-2 border border-theme-border/50">
+              <span className="text-[10px] uppercase font-bold text-theme-text-muted">🛒 A partir de 10 un:</span>
+              <span className="text-[12px] font-black text-green-500">R$ {product.wholesalePrice || "29,90"} <span className="font-semibold opacity-80 text-[10px] text-theme-text-muted">/cada</span></span>
             </div>
           </div>
         </div>

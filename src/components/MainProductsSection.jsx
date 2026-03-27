@@ -43,19 +43,19 @@ const WHATSAPP_MSG = encodeURIComponent(
 export default function MainProductsSection() {
   return (
     <section id="produtos" className="relative py-16 sm:py-28" aria-labelledby="main-products-heading">
-      <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[40rem] h-[20rem] bg-orange-500/10 blur-[120px] rounded-[100%] pointer-events-none" aria-hidden="true" />
+      <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[40rem] h-[20rem] bg-theme-accent/10 blur-[120px] rounded-[100%] pointer-events-none" aria-hidden="true" />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16 sm:mb-20">
           <h2
             id="main-products-heading"
-            className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl"
+            className="text-3xl font-extrabold tracking-tight text-theme-text-primary sm:text-4xl"
           >
             Nosso Mix de{" "}
-            <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-theme-accent to-theme-accent-light bg-clip-text text-transparent">
               Alta Perfomance
             </span>
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-base text-gray-400 sm:text-lg">
+          <p className="mx-auto mt-4 max-w-2xl text-base text-theme-text-muted sm:text-lg">
             Da impressora doméstica à linha de produção corporativa, temos o estoque ideal para suprir sua necessidade.
           </p>
         </div>
@@ -72,7 +72,7 @@ export default function MainProductsSection() {
               >
                 {/* Imagem */}
                 <div
-                  className={`relative w-full aspect-[4/3] sm:aspect-video lg:aspect-square overflow-hidden rounded-2xl shadow-xl border border-[#2A3243]/80 bg-white ${
+                  className={`relative w-full aspect-[4/3] sm:aspect-video lg:aspect-square overflow-hidden rounded-2xl shadow-xl border border-theme-border bg-white ${
                     isEven ? "lg:order-1" : "lg:order-2"
                   }`}
                 >
@@ -91,16 +91,16 @@ export default function MainProductsSection() {
                     isEven ? "lg:order-2" : "lg:order-1"
                   }`}
                 >
-                  <h3 className="text-2xl font-black text-white sm:text-3xl mb-4">
+                  <h3 className="text-2xl font-black text-theme-text-primary sm:text-3xl mb-4">
                     {category.title}
                   </h3>
-                  <p className="text-base text-gray-300 leading-relaxed mb-6">
+                  <p className="text-base text-theme-text-secondary leading-relaxed mb-6">
                     {category.description}
                   </p>
                   
                   <ul className="space-y-3 mb-8">
                     {category.bullets.map((bullet, idx) => (
-                      <li key={idx} className="flex items-center text-sm font-medium text-gray-200">
+                      <li key={idx} className="flex items-center text-sm font-medium text-theme-text-primary">
                         <svg className="w-5 h-5 text-whatsapp mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                         </svg>
@@ -110,9 +110,9 @@ export default function MainProductsSection() {
                   </ul>
 
                   {/* Preço Âncora Atacado */}
-                  <div className="mb-6 flex flex-wrap items-baseline gap-2 rounded-lg bg-[#1A2332]/50 px-4 py-3 border border-white/10 w-full sm:w-auto">
-                    <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">A partir de</span>
-                    <span className="text-3xl font-black text-white tracking-tight">{category.startingPrice}</span>
+                  <div className="mb-6 flex flex-wrap items-baseline gap-2 rounded-lg bg-theme-bg-glass px-4 py-3 border border-theme-border w-full sm:w-auto">
+                    <span className="text-xs font-bold text-theme-text-muted uppercase tracking-widest">A partir de</span>
+                    <span className="text-3xl font-black text-theme-text-primary tracking-tight">{category.startingPrice}</span>
                   </div>
 
                   <a

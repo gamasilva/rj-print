@@ -107,10 +107,10 @@ export default function BrandsNavSection({ brandProducts = {} }) {
         
         {/* Search Bar - Highlighted */}
         <div className="mx-auto max-w-3xl mb-12 sm:mb-16 relative group z-20">
-          <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-orange-600 to-amber-500 opacity-30 blur-lg group-hover:opacity-50 transition duration-500"></div>
-          <div className="relative flex items-center bg-[#1E1E24]/80 backdrop-blur-md rounded-2xl border border-white/10 shadow-2xl overflow-hidden">
+          <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-theme-accent to-theme-accent-light opacity-30 blur-lg group-hover:opacity-50 transition duration-500"></div>
+          <div className="relative flex items-center bg-theme-bg-card/80 backdrop-blur-md rounded-2xl border border-theme-border shadow-2xl overflow-hidden">
             <div className="pl-5 flex items-center pointer-events-none">
-              <svg className="h-6 w-6 text-orange-400 group-focus-within:text-orange-300 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="h-6 w-6 text-theme-accent group-focus-within:text-theme-accent-light transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
             </div>
@@ -119,12 +119,12 @@ export default function BrandsNavSection({ brandProducts = {} }) {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="Buscar por produto ou impressora (ex: Deskjet 1516)..."
-              className="block w-full pl-4 pr-12 py-5 sm:py-6 bg-transparent border-none placeholder-gray-500 text-white focus:outline-none focus:ring-0 text-base sm:text-xl font-medium"
+              className="block w-full pl-4 pr-12 py-5 sm:py-6 bg-transparent border-none placeholder-theme-text-muted text-theme-text-primary focus:outline-none focus:ring-0 text-base sm:text-xl font-medium"
             />
             {searchTerm && (
               <button
                 onClick={() => setSearchTerm("")}
-                className="absolute right-4 p-2 flex items-center justify-center text-gray-400 hover:text-white transition-colors bg-white/5 rounded-full hover:bg-white/10"
+                className="absolute right-4 p-2 flex items-center justify-center text-theme-text-muted hover:text-theme-text-primary transition-colors bg-theme-bg-glass rounded-full hover:bg-theme-bg-start"
                 aria-label="Limpar busca"
               >
                 <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -139,10 +139,10 @@ export default function BrandsNavSection({ brandProducts = {} }) {
           /* Search Results */
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
             <div className="mb-12 text-center">
-               <h3 className="text-2xl font-black text-white sm:text-3xl">
+               <h3 className="text-2xl font-black text-theme-text-primary sm:text-3xl">
                  {filteredProducts.length > 0 ? "Resultados da Busca" : "Nenhum resultado encontrado"}
                </h3>
-               <p className="mt-3 text-base sm:text-lg text-gray-400">
+               <p className="mt-3 text-base sm:text-lg text-theme-text-secondary">
                  {filteredProducts.length > 0 
                    ? `Encontramos ${filteredProducts.length} ${filteredProducts.length === 1 ? "produto" : "produtos"} para "${searchTerm}"`
                    : `Não encontramos nada parecido com "${searchTerm}". Tente buscar pelo modelo da sua impressora ou cartucho.`}
@@ -167,17 +167,17 @@ export default function BrandsNavSection({ brandProducts = {} }) {
           /* Default View (Grid de Marcas) */
           <>
             <div className="text-center mb-12 sm:mb-16">
-              <span className="inline-flex items-center gap-2 rounded-full border border-orange-500/20 bg-orange-500/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-orange-400 mb-4">
-                <span className="h-1.5 w-1.5 rounded-full bg-orange-500 animate-pulse" />
+              <span className="inline-flex items-center gap-2 rounded-full border border-theme-accent/20 bg-theme-accent/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-theme-accent mb-4">
+                <span className="h-1.5 w-1.5 rounded-full bg-theme-accent animate-pulse" />
                 Catálogo Completo
               </span>
-              <h2 className="text-3xl font-black tracking-tight text-white sm:text-4xl lg:text-5xl">
+              <h2 className="text-3xl font-black tracking-tight text-theme-text-primary sm:text-4xl lg:text-5xl">
                 Selecione uma{" "}
-                <span className="bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-theme-accent to-theme-accent-light bg-clip-text text-transparent">
                   marca
                 </span>
               </h2>
-              <p className="mx-auto mt-4 max-w-xl text-base text-gray-400 sm:text-lg">
+              <p className="mx-auto mt-4 max-w-xl text-base text-theme-text-secondary sm:text-lg">
                 Todas as linhas com preço de distribuidor e estoque imediato.
               </p>
             </div>
@@ -192,8 +192,8 @@ export default function BrandsNavSection({ brandProducts = {} }) {
                     className={`group relative flex flex-col items-center justify-center gap-3 rounded-2xl p-6 sm:p-8 transition-all duration-300 active:scale-95 overflow-hidden
                       ${
                         isActive
-                          ? `bg-white/[0.08] ring-2 ring-white/20 shadow-[0_0_30px_rgba(255,255,255,0.05)] scale-[1.02] border border-white/10`
-                          : "bg-white/[0.02] border-2 border-white/5 hover:border-white/10 hover:bg-white/[0.04] hover:-translate-y-2"
+                          ? `bg-theme-bg-glass ring-2 ring-theme-border shadow-[0_0_30px_rgba(var(--theme-accent-rgb),0.05)] scale-[1.02] border border-theme-border`
+                          : "bg-theme-bg-card border-2 border-theme-border/50 hover:border-theme-border hover:bg-theme-bg-glass hover:-translate-y-2"
                       }
                     `}
                     style={{
@@ -210,26 +210,26 @@ export default function BrandsNavSection({ brandProducts = {} }) {
                     />
                     
                     <div 
-                      className={`p-3 sm:p-4 rounded-2xl transition-all duration-300 ${
+                      className={`p-3 sm:p-4 rounded-2xl transition-all duration-300 flex items-center justify-center ${
                         isActive 
-                          ? "bg-white shadow-lg scale-110" 
-                          : "bg-white/10 group-hover:bg-white group-hover:shadow-md"
+                          ? "bg-theme-text-primary text-theme-bg-primary shadow-lg scale-110" 
+                          : "bg-theme-bg-glass group-hover:bg-theme-text-primary group-hover:shadow-md group-hover:text-theme-bg-primary"
                       }`}
-                      style={{ color: brand.accent }}
+                      style={{ color: isActive ? brand.accent : brand.accent }}
                     >
                       {brand.logo}
                     </div>
                     <div className="text-center">
                       <span
                         className={`block text-sm sm:text-base font-black uppercase tracking-wider transition-colors duration-300 ${
-                          isActive ? "text-white" : "text-gray-400 group-hover:text-white"
+                          isActive ? "text-theme-text-primary" : "text-theme-text-secondary group-hover:text-theme-text-primary"
                         }`}
                       >
                         {brand.name}
                       </span>
                       <span
                         className={`mt-1 block text-[10px] sm:text-xs font-bold uppercase tracking-widest transition-colors duration-300 ${
-                          isActive ? "text-orange-400" : "text-gray-500 group-hover:text-gray-400"
+                          isActive ? "text-theme-accent" : "text-theme-text-muted group-hover:text-theme-text-secondary"
                         }`}
                       >
                         {isActive ? "✓ Selecionada" : "Ver produtos →"}
@@ -252,19 +252,19 @@ export default function BrandsNavSection({ brandProducts = {} }) {
           opacity: activeBrand && !searchTerm ? 1 : 0,
         }}
       >
-        <div className="mt-16 border-t border-white/10">
+        <div className="mt-16 border-t border-theme-border/50">
           <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
             <div className="mb-12 text-center">
               <span
-                className="inline-flex items-center gap-2 rounded-full px-5 py-2 text-xs font-black uppercase tracking-widest text-white shadow-lg"
-                style={{ background: `linear-gradient(135deg, ${activeBrandData?.accent || "#3B82F6"}, ${activeBrandData?.accent || "#3B82F6"}88)` }}
+                className="inline-flex items-center gap-2 rounded-full px-5 py-2 text-xs font-black uppercase tracking-widest bg-theme-accent text-white shadow-lg"
+                style={{ background: `linear-gradient(135deg, ${activeBrandData?.accent || "var(--theme-accent)"}, ${activeBrandData?.accent || "var(--theme-accent-light)"}88)` }}
               >
                 <span className="animate-pulse">●</span> Catálogo {activeBrandData?.name}
               </span>
-              <h3 className="mt-6 text-2xl font-black tracking-tight text-white sm:text-4xl">
+              <h3 className="mt-6 text-2xl font-black tracking-tight text-theme-text-primary sm:text-4xl">
                 Suprimentos Originais {activeBrandData?.name}
               </h3>
-              <p className="mx-auto mt-4 max-w-2xl text-base text-gray-400">
+              <p className="mx-auto mt-4 max-w-2xl text-base text-theme-text-secondary">
                 Todos os produtos são 100% originais e genuínos com garantia de fábrica.
               </p>
             </div>

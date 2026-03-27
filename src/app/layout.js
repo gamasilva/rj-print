@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppFloating from "@/components/WhatsAppFloating";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -82,31 +83,46 @@ export default function RootLayout({ children }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                const storedTheme = localStorage.getItem("rjprint-theme");
+                if (storedTheme && storedTheme !== "theme-dark") {
+                  document.documentElement.classList.add(storedTheme);
+                }
+              } catch (e) {}
+            `,
+          }}
+        />
       </head>
-      <body className="min-h-screen flex flex-col text-[#E8ECF1] bg-[#0A0A0A] overflow-x-hidden">
-        {/* Fundo Fixo com o Gradiente da Garantia */}
-        <div className="fixed inset-0 bg-gradient-to-br from-[#1A1A1A] via-[#121212] to-[#0A0A0A] -z-20" aria-hidden="true" />
-        
-        {/* Grid Pattern Global - Estilo Garantia */}
-        <div className="fixed inset-0 opacity-20 pointer-events-none -z-10" aria-hidden="true">
+      <body className="min-h-screen flex flex-col text-theme-text-primary bg-theme-bg-end overflow-x-hidden transition-colors duration-300">
+        <ThemeProvider>
+          {/* Fundo Fixo com o Gradiente da Garantia */}
+          <div className="fixed inset-0 bg-gradient-to-br from-theme-bg-start via-theme-bg-mid to-theme-bg-end -z-20 transition-colors duration-300" aria-hidden="true" />
+          
+          {/* Grid Pattern Global - Estilo Garantia */}
+          <div className="fixed inset-0 opacity-20 pointer-events-none -z-10" aria-hidden="true" />
+          {/* A aplicação correta do pattern precisará vir no CSS ou com currentColor, para reagir à mudança de tema. Vamos ajustar no style. */}
           <div 
-            className="absolute inset-0"
+            className="fixed inset-0 opacity-20 pointer-events-none -z-10 transition-colors duration-300"
+            aria-hidden="true"
             style={{ 
-              backgroundImage: "radial-gradient(circle at 2px 2px, rgba(234, 88, 12, 0.15) 1px, transparent 0)", 
+              backgroundImage: "radial-gradient(circle at 2px 2px, var(--theme-pattern-color) 1px, transparent 0)", 
               backgroundSize: "32px 32px" 
             }} 
           />
-        </div>
 
-        <a href="#conteudo-principal" className="skip-link">
-          Pular para conteúdo principal
-        </a>
-        <Header />
-        <main id="conteudo-principal" className="flex-1 relative z-0">
-          {children}
-        </main>
-        <Footer />
-        <WhatsAppFloating />
+          <a href="#conteudo-principal" className="skip-link">
+            Pular para conteúdo principal
+          </a>
+          <Header />
+          <main id="conteudo-principal" className="flex-1 relative z-0">
+            {children}
+          </main>
+          <Footer />
+          <WhatsAppFloating />
+        </ThemeProvider>
       </body>
     </html>
   );
