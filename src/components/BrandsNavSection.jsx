@@ -31,6 +31,19 @@ const brands = [
       </svg>
     ),
   },
+  {
+    id: "brother",
+    name: "Brother",
+    accent: "#CC0000",
+    gradient: "from-[#CC0000] to-[#FF6B35]",
+    bgLight: "bg-orange-50",
+    borderActive: "border-[#FF6B35]",
+    logo: (
+      <svg className="h-8 w-8 sm:h-10 sm:w-10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M3 5h4v2H5v2h2v2H5v2h2v2H3V5zm6 0h3c1.1 0 2 .9 2 2v1c0 .55-.45 1-1 1 .55 0 1 .45 1 1v2c0 1.1-.9 2-2 2H9V5zm2 2v2h1V7h-1zm0 4v2h1v-2h-1zm4-6h2v4h1V5h2v6h-2V7h-1v4h-2V5zm-8 12h14v2H7v-2z" />
+      </svg>
+    ),
+  },
 ];
 
 export default function BrandsNavSection({ brandProducts = {} }) {
@@ -156,7 +169,7 @@ export default function BrandsNavSection({ brandProducts = {} }) {
               </p>
             </div>
 
-            <div className="mx-auto grid max-w-sm grid-cols-2 gap-4 sm:max-w-4xl sm:grid-cols-4 sm:gap-6">
+            <div className="mx-auto grid max-w-sm grid-cols-1 gap-4 sm:max-w-3xl sm:grid-cols-3 sm:gap-6">
               {brands.map((brand) => {
                 const isActive = activeBrand === brand.id;
                 return (
