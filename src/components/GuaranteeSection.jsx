@@ -18,7 +18,7 @@ export default function GuaranteeSection() {
           </span>
           <h2 className="text-3xl font-black tracking-tight text-theme-text-primary sm:text-5xl">
             Garantia Incondicional de{" "}
-            <span className="text-theme-accent">7 Dias</span>
+            <span className="text-theme-accent">30 Dias</span>
           </h2>
           <p className="mx-auto mt-6 max-w-3xl text-base sm:text-lg leading-relaxed text-theme-text-secondary">
             O nosso nicho exige o mais alto padrão. Para garantir que sua empresa receba suprimentos perfeitamente intactos e autênticos das fabricantes, estabelecemos um processo antifraude 100% seguro.
@@ -35,7 +35,7 @@ export default function GuaranteeSection() {
             </div>
             <h3 className="text-xl font-bold text-theme-text-primary mb-3">Selo de Proteção Total</h3>
             <p className="text-theme-text-secondary text-sm leading-relaxed flex-grow">
-              Todo pedido é protegido por nossa política de 7 dias. Durante esse período, garantimos a integridade contra qualquer alteração durante o trânsito ou anomalia de fábrica.
+              Todo pedido é protegido por nossa política de 30 dias. Durante esse período, garantimos a integridade contra qualquer alteração durante o trânsito ou anomalia de fábrica.
             </p>
           </div>
 

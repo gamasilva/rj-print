@@ -6,7 +6,7 @@ export default function SocialProofSection() {
       role: "Gerente de T.I, TechSolutions",
       text: "Compramos direto para nossas 4 filiais. A qualidade dos toners impressiona e a entrega é impecável. Nunca tivemos uma máquina danificada.",
       rating: 5,
-      image: "/carlos_mendes.webp"
+      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop&q=80"
     },
     {
       id: 2,
@@ -14,7 +14,7 @@ export default function SocialProofSection() {
       role: "Dona de Papelaria, Copiadora & Cia",
       text: "Eu costumava ter problemas com cartuchos ressecados de outros fornecedores. Aqui os originais vêm perfeitos e a margem de revenda é ótima.",
       rating: 5,
-      image: "/ana_oliveira.webp"
+      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&q=80"
     },
     {
       id: 3,
@@ -22,7 +22,7 @@ export default function SocialProofSection() {
       role: "Comprador de Suprimentos",
       text: "Atendimento via WhatsApp super ágil. Fecho os pedidos grandes da empresa toda semana com eles porque o preço é imbatível no atacado.",
       rating: 5,
-      image: "/roberto_silva.webp"
+      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=150&fit=crop&q=80"
     },
   ];
 

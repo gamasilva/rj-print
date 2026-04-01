@@ -5,14 +5,12 @@ import { createContext, useContext, useEffect, useState } from "react";
 const ThemeContext = createContext();
 
 export function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState("theme-dark");
+  const [theme, setTheme] = useState("theme-light-blue");
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const storedTheme = localStorage.getItem("rjprint-theme");
-    if (storedTheme) {
-      setTheme(storedTheme);
-    }
+    // Removemos a leitura antiga do localStorage para forçar o tema azul para todos
+    localStorage.removeItem("rjprint-theme");
     setMounted(true);
   }, []);
 
@@ -21,12 +19,8 @@ export function ThemeProvider({ children }) {
     
     const html = document.documentElement;
     html.classList.remove("theme-dark", "theme-light-blue", "theme-light-orange");
+    html.classList.add(theme);
     
-    if (theme !== "theme-dark") {
-      html.classList.add(theme);
-    }
-    
-    localStorage.setItem("rjprint-theme", theme);
   }, [theme, mounted]);
 
   return (

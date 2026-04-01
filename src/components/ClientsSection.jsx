@@ -25,13 +25,13 @@ export default function ClientsSection() {
   return (
     <section className="relative py-12 sm:py-20">
       {/* Orb decorativo conectando com a próxima seção */}
-      <div className="absolute -bottom-32 -left-32 w-[30rem] h-[30rem] bg-orange-600/10 blur-[120px] rounded-full pointer-events-none" aria-hidden="true" />
+      <div className="absolute -bottom-32 -left-32 w-[30rem] h-[30rem] bg-theme-accent/10 blur-[120px] rounded-full pointer-events-none" aria-hidden="true" />
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
-          <p className="text-sm font-semibold tracking-widest text-orange-400 uppercase">
+          <p className="text-sm font-semibold tracking-widest text-theme-accent shadow-sm uppercase">
             Nossos Clientes
           </p>
-          <h2 className="mt-2 text-2xl sm:text-3xl font-black text-white">
+          <h2 className="mt-2 text-2xl sm:text-3xl font-black text-theme-text-primary">
             Mais de 2.000 empresas confiam em nós
           </h2>
         </div>
@@ -52,7 +52,7 @@ export default function ClientsSection() {
                 key={index} 
                 className="flex items-center justify-center opacity-40 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
               >
-                <span className="text-xl sm:text-2xl font-black tracking-tighter text-white">
+                <span className="text-xl sm:text-2xl font-black tracking-tighter text-theme-text-secondary">
                   {logo}
                 </span>
               </div>
@@ -70,7 +70,7 @@ export default function ClientsSection() {
                 key={`dup-${index}`} 
                 className="flex items-center justify-center opacity-40 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
               >
-                <span className="text-xl sm:text-2xl font-black tracking-tighter text-white">
+                <span className="text-xl sm:text-2xl font-black tracking-tighter text-theme-text-secondary">
                   {logo}
                 </span>
               </div>

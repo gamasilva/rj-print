@@ -2,36 +2,36 @@ import Image from "next/image";
 
 const productCategories = [
   {
-    id: "cartuchos",
-    title: "Cartuchos de Tinta",
-    description: "Cartuchos originais HP, Epson e Canon com o maior giro de mercado. Alto rendimento para impressoras jato de tinta, entregando cores vibrantes e impressões sem falhas.",
-    image: "/product_cartridge_color.webp",
-    bullets: ["Todas as numerações", "Rendimento Padrão e XL", "100% Originais"],
-    startingPrice: "R$ 29,90"
+    id: "epson-t544-kit",
+    title: "EPSON T544 Kit 4 Cores",
+    description: "Kit original com 4 cores de tinta Epson T544 (70ml cada). Compatível com L3110, L3210, L3150, L3250, L5190, L5290 e L5590. Impressão nítida com custo mínimo por página.",
+    image: "/EPSON-T544-KIT-4-CORES.webp",
+    bullets: ["70 mL por unidade", "Compatível com 7 modelos", "100% Original Epson"],
+    startingPrice: "R$ 149,00"
   },
   {
-    id: "toners",
-    title: "Toners Laser",
-    description: "Linha completa de toners originais para impressoras laser monocromáticas e coloridas. Qualidade impecável para documentos oficiais e altíssima capacidade de impressão.",
-    image: "/product_hp_toner_black.webp",
-    bullets: ["Cores CMYK e Monocromáticos", "Até 10.000 páginas", "Secagem instantânea"],
-    startingPrice: "R$ 34,90"
+    id: "epson-kit-fotografico",
+    title: "Kit Tinta Fotográfica Epson Original",
+    description: "Kit com 6 refis originais (T554 + T555) com Preto Pigmentado, Preto Foto, Ciano, Magenta, Amarelo e Cinza. Para impressoras EcoTank L8160 e L8180, com qualidade fotográfica profissional.",
+    image: "/Kit-Tinta-Fotogr-fica-Epson-Original.webp",
+    bullets: ["6 tintas fotográficas", "Preto Pigmentado + Corante", "Para L8160 e L8180"],
+    startingPrice: "R$ 229,00"
   },
   {
-    id: "refis",
-    title: "Refil de Tinta (EcoTank/MegaTank)",
-    description: "Garrafas de tintas originais desenhadas para sistemas de tanque. Rendimento imbatível, evitando entupimentos na cabeça de impressão e zelando pelo equipamento.",
-    image: "/product_epson_ink.webp",
-    bullets: ["Tintas Corante e Pigmentada", "Maior custo x benefício", "Evita manutenções"],
-    startingPrice: "R$ 38,90"
+    id: "canon-g3111-kit",
+    title: "Kit Tintas Original Canon G3111/G4111",
+    description: "Kit de tintas originais Canon para as séries Pixma Maxx G1100, G2100, G3100, G3102 e G4100. Estoque disponível com entrega imediata para todo o Brasil.",
+    image: "/Kit-Tintas-Original-Para-Canon-G3111-G3111-G4111-G4100-Gl190.webp",
+    bullets: ["Compatível com 5 modelos", "Mega Tank original Canon", "Alta capacidade"],
+    startingPrice: "R$ 139,00"
   },
   {
-    id: "cilindros",
-    title: "Cilindros e Unidades de Imagem",
-    description: "Peças de reposição vitais para copiadoras e multifuncionais de alto volume, assegurando que o toner seja transferido para o papel com a máxima nitidez e em velocidade industrial.",
-    image: "/product_brother_toner.webp",
-    bullets: ["Alta durabilidade", "Qualidade fotográfica", "Manutenção preventiva"],
-    startingPrice: "R$ 89,90"
+    id: "canon-gx6010-gi16",
+    title: "Kit Tinta Original GX6010/GX7010 GI-16",
+    description: "Kit com 4 cores GI-16 originais para Canon Mega Tank GX6010 e GX7010. Tecnologia de ponta para impressão de alto volume com custo por página ultra reduzido.",
+    image: "/Kit-Tinta-Original-Para-Gx6010-Gx7010-Gi-16-Gi16-04-Cores.webp",
+    bullets: ["4 cores GI-16 originais", "Para GX6010 e GX7010", "Custo mínimo por página"],
+    startingPrice: "R$ 189,00"
   },
 ];
 
@@ -72,7 +72,7 @@ export default function MainProductsSection() {
               >
                 {/* Imagem */}
                 <div
-                  className={`relative w-full aspect-[4/3] sm:aspect-video lg:aspect-square overflow-hidden rounded-2xl shadow-xl border border-theme-border bg-white ${
+                  className={`relative w-full aspect-[4/3] overflow-hidden rounded-2xl shadow-xl border border-theme-border bg-white flex items-center justify-center p-6 ${
                     isEven ? "lg:order-1" : "lg:order-2"
                   }`}
                 >
@@ -80,7 +80,7 @@ export default function MainProductsSection() {
                     src={category.image}
                     alt={category.title}
                     fill
-                    className="object-cover transition-transform duration-700 hover:scale-105"
+                    className="object-contain p-4 transition-opacity duration-500 hover:opacity-90"
                     sizes="(max-width: 1024px) 100vw, 50vw"
                   />
                 </div>

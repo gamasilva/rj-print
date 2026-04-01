@@ -29,10 +29,10 @@ export default function Header() {
           {/* Navegação Desktop */}
           <nav className="hidden lg:flex items-center gap-6 sm:gap-8">
             <a href="#marcas" className="text-sm font-semibold text-theme-text-secondary hover:text-theme-text-primary transition-colors duration-200">Produtos</a>
-            <a href="#quem-somos" className="text-sm font-semibold text-theme-text-secondary hover:text-theme-text-primary transition-colors duration-200">Quem Somos</a>
             <a href="#logistica" className="text-sm font-semibold text-theme-text-secondary hover:text-theme-text-primary transition-colors duration-200">Entrega</a>
-            <a href="#depoimentos" className="text-sm font-semibold text-theme-text-secondary hover:text-theme-text-primary transition-colors duration-200">Clientes</a>
+            <a href="#quem-somos" className="text-sm font-semibold text-theme-text-secondary hover:text-theme-text-primary transition-colors duration-200">Quem Somos</a>
             <a href="#beneficios" className="text-sm font-semibold text-theme-text-secondary hover:text-theme-text-primary transition-colors duration-200">Diferenciais</a>
+            <a href="#depoimentos" className="text-sm font-semibold text-theme-text-secondary hover:text-theme-text-primary transition-colors duration-200">Clientes</a>
           </nav>
 
           {/* CTA WhatsApp */}

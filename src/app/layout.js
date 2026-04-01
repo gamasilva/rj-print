@@ -74,26 +74,14 @@ const jsonLd = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="pt-BR" className={`${montserrat.variable} antialiased`}>
+    <html lang="pt-BR" suppressHydrationWarning className={`${montserrat.variable} theme-light-blue antialiased`}>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="theme-color" content="#1E1E24" />
+        <meta name="theme-color" content="#2563EB" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              try {
-                const storedTheme = localStorage.getItem("rjprint-theme");
-                if (storedTheme && storedTheme !== "theme-dark") {
-                  document.documentElement.classList.add(storedTheme);
-                }
-              } catch (e) {}
-            `,
-          }}
         />
       </head>
       <body className="min-h-screen flex flex-col text-theme-text-primary bg-theme-bg-end overflow-x-hidden transition-colors duration-300">

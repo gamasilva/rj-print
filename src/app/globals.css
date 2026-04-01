@@ -48,7 +48,7 @@ html.theme-light-orange {
   --theme-pattern-color: rgba(234, 88, 12, 0.15);
 }
 
-@theme inline {
+@theme {
   --color-theme-bg-start: var(--theme-bg-start);
   --color-theme-bg-mid: var(--theme-bg-mid);
   --color-theme-bg-end: var(--theme-bg-end);
@@ -66,11 +66,11 @@ html.theme-light-orange {
   --color-whatsapp-dark: #1EBE5A;
   --font-sans: var(--font-montserrat);
   --animate-marquee: marquee 30s linear infinite;
-  
-  @keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(calc(-100% - 2.5rem)); }
-  }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-100% - 2.5rem)); }
 }
 html {
   scroll-behavior: smooth;

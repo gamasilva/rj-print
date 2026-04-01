@@ -6,54 +6,50 @@ const trustItems = [
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
       </svg>
     ),
-    title: "Produtos 100% Originais",
+    title: "100% Original",
     description:
-      "Cada cartucho e toner é original de fábrica, com selo de autenticidade e nota fiscal comprovando a procedência. Proteja seu parque de impressão.",
+      "Cada produto sai diretamente do estoque autorizado do fabricante. Selo de autenticidade, código rastreável e nota fiscal em 100% das entregas. Zero risco para o seu parque de impressão.",
     stat: "100%",
-    statLabel: "Original",
+    statLabel: "Autenticidade",
   },
   {
     icon: (
       <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
-        <path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16" />
+        <line x1="12" y1="1" x2="12" y2="23" />
+        <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
       </svg>
     ),
-    title: "Homologação Total",
+    title: "Melhor Preço do Brasil",
     description:
-      "Distribuição de produtos íntegros, de lote rastreável. Seu parque de impressão seguro, regulamentado e com garantia do fabricante.",
-    stat: "0",
-    statLabel: "Reclamações",
+      "Compramos diretamente do fabricante e repassamos a economia para você. Sem intermediários, sem margens abusivas — garantimos o menor preço do mercado ou seu dinheiro de volta.",
+    stat: "#1",
+    statLabel: "Menor Preço",
   },
   {
     icon: (
       <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
-        <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
-        <line x1="12" y1="22.08" x2="12" y2="12" />
+        <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
       </svg>
     ),
-    title: "Estoque para Grandes Volumes",
+    title: "Atendimento 100% Humanizado",
     description:
-      "Capacidade de entrega massiva para pedidos de alto volume. Logística própria otimizada para todo o Brasil — nunca deixamos sua empresa sem suprimentos.",
-    stat: "+50K",
-    statLabel: "Suprimentos/Ano",
+      "Nada de bots ou respostas automáticas. Fale com um especialista de verdade a qualquer momento — pelo WhatsApp, e-mail ou telefone. Sua dúvida resolvida na hora, sempre.",
+    stat: "24/7",
+    statLabel: "Disponível",
   },
   {
     icon: (
       <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
         <polyline points="14 2 14 8 20 8" />
-        <line x1="16" y1="13" x2="8" y2="13" />
-        <line x1="16" y1="17" x2="8" y2="17" />
-        <polyline points="10 9 9 9 8 9" />
+        <path d="M9 15l2 2 4-4" />
       </svg>
     ),
-    title: "Transparência Total",
+    title: "Suporte Pós-Venda",
     description:
-      "Empresa regularizada com CNPJ ativo. Emissão de nota fiscal em 100% das operações. Sem surpresas, sem letrinhas miúdas — confiança de ponta a ponta.",
-    stat: "NF-e",
-    statLabel: "Em toda venda",
+      "Nosso relacionamento não termina na entrega. Garantimos 30 dias de suporte completo após a compra — troca facilitada, assistência técnica e acompanhamento de cada pedido até você estar satisfeito.",
+    stat: "30d",
+    statLabel: "Garantia Total",
   },
 ];
 

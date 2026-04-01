@@ -5,19 +5,6 @@ import ProductCard from "./ProductCard";
 
 const brands = [
   {
-    id: "hp",
-    name: "HP",
-    accent: "#0096D6",
-    gradient: "from-[#0096D6] to-[#0073B1]",
-    bgLight: "bg-blue-50",
-    borderActive: "border-[#0096D6]",
-    logo: (
-      <svg className="h-8 w-8 sm:h-10 sm:w-10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H8.5l2-8H13l-2 8zm5 0h-2.5l2-8H18l-2 8z" />
-      </svg>
-    ),
-  },
-  {
     id: "epson",
     name: "Epson",
     accent: "#00559E",
@@ -27,19 +14,6 @@ const brands = [
     logo: (
       <svg className="h-8 w-8 sm:h-10 sm:w-10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
         <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM8 15H5v-2h3v2zm0-4H5V9h3v2zm5 4h-3v-2h3v2zm0-4h-3V9h3v2zm5 4h-3v-2h3v2zm0-4h-3V9h3v2z" />
-      </svg>
-    ),
-  },
-  {
-    id: "brother",
-    name: "Brother",
-    accent: "#004B8D",
-    gradient: "from-[#004B8D] to-[#818CF8]",
-    bgLight: "bg-indigo-50",
-    borderActive: "border-[#818CF8]",
-    logo: (
-      <svg className="h-8 w-8 sm:h-10 sm:w-10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M19 8h-1V3H6v5H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zM8 5h8v3H8V5zm8 14H8v-4h8v4zm4-4h-2v-2H6v2H4v-4c0-.55.45-1 1-1h14c.55 0 1 .45 1 1v4z" />
       </svg>
     ),
   },
