@@ -29,10 +29,10 @@ export default function SocialProofSection() {
   return (
     <section
       id="depoimentos"
-      className="relative py-16 sm:py-24"
+      className="relative py-16 sm:py-24 overflow-hidden"
       aria-labelledby="social-proof-heading"
     >
-      <div className="absolute top-1/2 -left-32 -translate-y-1/2 w-[30rem] h-[30rem] bg-theme-accent-light/10 blur-[120px] rounded-full pointer-events-none" aria-hidden="true" />
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[20rem] h-[20rem] bg-theme-accent-light/10 blur-[120px] rounded-full pointer-events-none" aria-hidden="true" />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-10 sm:mb-16">
           <h2

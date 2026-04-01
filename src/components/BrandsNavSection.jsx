@@ -85,10 +85,10 @@ export default function BrandsNavSection({ brandProducts = {} }) {
   const activeProducts = activeBrand ? brandProducts[activeBrand] || [] : [];
 
   return (
-    <section id="marcas" className="relative pt-32 pb-16 sm:py-24 bg-transparent">
-      {/* Decorative elements */}
-      <div className="absolute top-0 left-1/4 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
+    <section id="marcas" className="relative pt-32 pb-16 sm:py-24 bg-transparent overflow-x-hidden">
+      {/* Decorative elements — contidos para não causar overflow lateral */}
+      <div className="absolute top-0 left-0 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-10">
         

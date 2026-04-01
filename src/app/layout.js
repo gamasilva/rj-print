@@ -1,4 +1,5 @@
 import { Montserrat } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -76,23 +77,17 @@ export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR" suppressHydrationWarning className={`${montserrat.variable} theme-light-blue antialiased`}>
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {/* Viewport otimizado para mobile - interactive-widget evita resize no iOS ao abrir teclado */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
         <meta name="theme-color" content="#2563EB" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        {/* Google Tag Manager */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N9S7CRPJ');`,
-          }}
-        />
-        {/* End Google Tag Manager */}
       </head>
       <body className="min-h-screen flex flex-col text-theme-text-primary bg-theme-bg-end overflow-x-hidden transition-colors duration-300">
-        {/* Google Tag Manager (noscript) */}
+        {/* Google Tag Manager (noscript) — deve ficar imediatamente após a abertura do body */}
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-N9S7CRPJ"
@@ -101,21 +96,19 @@ export default function RootLayout({ children }) {
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
-        {/* End Google Tag Manager (noscript) */}
+
         <ThemeProvider>
           {/* Fundo Fixo com o Gradiente da Garantia */}
           <div className="fixed inset-0 bg-gradient-to-br from-theme-bg-start via-theme-bg-mid to-theme-bg-end -z-20 transition-colors duration-300" aria-hidden="true" />
-          
-          {/* Grid Pattern Global - Estilo Garantia */}
-          <div className="fixed inset-0 opacity-20 pointer-events-none -z-10" aria-hidden="true" />
-          {/* A aplicação correta do pattern precisará vir no CSS ou com currentColor, para reagir à mudança de tema. Vamos ajustar no style. */}
-          <div 
+
+          {/* Grid Pattern Global */}
+          <div
             className="fixed inset-0 opacity-20 pointer-events-none -z-10 transition-colors duration-300"
             aria-hidden="true"
-            style={{ 
-              backgroundImage: "radial-gradient(circle at 2px 2px, var(--theme-pattern-color) 1px, transparent 0)", 
-              backgroundSize: "32px 32px" 
-            }} 
+            style={{
+              backgroundImage: "radial-gradient(circle at 2px 2px, var(--theme-pattern-color) 1px, transparent 0)",
+              backgroundSize: "32px 32px"
+            }}
           />
 
           <a href="#conteudo-principal" className="skip-link">
@@ -128,6 +121,15 @@ export default function RootLayout({ children }) {
           <Footer />
           <WhatsAppFloating />
         </ThemeProvider>
+
+        {/* Google Tag Manager — next/script com afterInteractive não bloqueia o render */}
+        <Script
+          id="gtm-script"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N9S7CRPJ');`,
+          }}
+        />
       </body>
     </html>
   );

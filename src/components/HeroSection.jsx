@@ -29,7 +29,7 @@ export default function HeroSection() {
         {/* Logo fundo GIGANTE */}
         <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center opacity-[0.08]" aria-hidden="true">
           <Image src="/logo_rjprint.webp" alt="" role="presentation" width={500} height={500}
-            className="w-[160%] max-w-none h-auto object-contain" priority fetchPriority="high" />
+            className="w-full max-w-[120vw] h-auto object-contain" priority fetchPriority="high" />
         </div>
 
         {/* Topo do Viewport (Logo + Textos) */}
@@ -91,8 +91,7 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Extensão de fundo (Bleed) para Mobile: Preenche o espaço extra do Safari e empurra o conteúdo seguinte para baixo sem deixar fundo branco. */}
-      <div className="relative h-[25vh] w-full bg-[#282838] lg:hidden pointer-events-none" aria-hidden="true" />
+
 
       {/* ═══════════════════════════════════════════════════
           DESKTOP  (≥ lg) — layout duas colunas

@@ -74,13 +74,18 @@ html.theme-light-orange {
 }
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden; /* Impede scroll horizontal em toda a página */
 }
 
 body {
   font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden; /* Dupla proteção contra overflow lateral */
+  /* Safe area para iPhones com notch / home indicator */
+  padding-bottom: env(safe-area-inset-bottom);
 }
+
 
 /* Skip Link - Acessibilidade */
 .skip-link {

@@ -60,9 +60,9 @@ export default function TrustSection() {
       className="relative py-16 sm:py-28 overflow-hidden"
       aria-labelledby="trust-heading"
     >
-      {/* Orbs decorativos */}
-      <div className="absolute top-1/4 -left-20 w-60 h-60 bg-theme-accent/5 rounded-full blur-3xl" aria-hidden="true" />
-      <div className="absolute bottom-1/4 -right-20 w-80 h-80 bg-theme-accent-light/5 rounded-full blur-3xl" aria-hidden="true" />
+      {/* Orbs decorativos — fixados dentro da section */}
+      <div className="absolute top-1/4 left-0 w-60 h-60 bg-theme-accent/5 rounded-full blur-3xl" aria-hidden="true" />
+      <div className="absolute bottom-1/4 right-0 w-80 h-80 bg-theme-accent-light/5 rounded-full blur-3xl" aria-hidden="true" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 sm:mb-20">

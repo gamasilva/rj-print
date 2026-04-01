@@ -28,21 +28,24 @@ export default function ProductModal({ product, brandName, onClose }) {
 
   return (
     <div
-      className="fixed inset-0 z-[9999] flex items-center justify-center"
+      className="fixed inset-0 z-[9999] flex items-end sm:items-center justify-center"
       role="dialog"
       aria-modal="true"
       aria-label={product.name}
     >
       {/* Backdrop */}
       <div
-        className="absolute inset-0 bg-black/70 backdrop-blur-sm animate-fade-in"
+        className="absolute inset-0 bg-black/70 backdrop-blur-sm"
         onClick={onClose}
       />
 
-      {/* Modal Container */}
-      <div className="relative z-10 mx-4 flex max-h-[90dvh] w-full max-w-3xl flex-col overflow-hidden rounded-3xl border border-white/15 bg-[#1e1e2e] shadow-[0_32px_80px_rgba(0,0,0,0.6)] animate-modal-in sm:mx-6">
+      {/* Modal Container — bottom sheet no mobile, dialog centralizado no sm+ */}
+      <div className="relative z-10 mx-0 sm:mx-6 flex max-h-[92dvh] sm:max-h-[90dvh] w-full sm:max-w-3xl flex-col overflow-hidden rounded-t-3xl sm:rounded-3xl border-t sm:border border-white/15 bg-[#1e1e2e] shadow-[0_-8px_40px_rgba(0,0,0,0.5)] sm:shadow-[0_32px_80px_rgba(0,0,0,0.6)]">
         
-        {/* Close Button */}
+        {/* Drag indicator (mobile) + Close Button */}
+        <div className="flex items-center justify-between px-4 pt-3 pb-2 sm:hidden">
+          <div className="mx-auto h-1 w-10 rounded-full bg-white/20" aria-hidden="true" />
+        </div>
         <button
           onClick={onClose}
           className="absolute right-4 top-4 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white/70 backdrop-blur-md transition-all hover:bg-white/20 hover:text-white active:scale-90"

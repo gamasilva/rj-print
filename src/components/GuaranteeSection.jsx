@@ -4,9 +4,9 @@ import Image from "next/image";
 
 export default function GuaranteeSection() {
   return (
-    <section className="relative py-20 sm:py-32 bg-transparent" id="garantia">
+    <section className="relative py-20 sm:py-32 bg-transparent overflow-hidden" id="garantia">
       {/* Orb Blur Esquerdo */}
-      <div className="absolute -left-32 top-0 h-96 w-96 rounded-full bg-theme-accent/10 blur-[100px] pointer-events-none" />
+      <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-theme-accent/10 blur-[100px] pointer-events-none" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
