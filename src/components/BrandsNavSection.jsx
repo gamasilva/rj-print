@@ -72,7 +72,7 @@ export default function BrandsNavSection({ brandProducts = {} }) {
   const activeProducts = activeBrand ? brandProducts[activeBrand] || [] : [];
 
   return (
-    <section id="marcas" className="relative py-16 sm:py-24 bg-transparent">
+    <section id="marcas" className="relative pt-32 pb-16 sm:py-24 bg-transparent">
       {/* Decorative elements */}
       <div className="absolute top-0 left-1/4 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
