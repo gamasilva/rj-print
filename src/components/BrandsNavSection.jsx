@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import dynamic from "next/dynamic";
+import Image from "next/image";
 
 // ProductCard — chunk separado, só hidratado quando o painel de marca abre
 const ProductCard = dynamic(() => import("./ProductCard"), { ssr: false });
@@ -20,9 +21,14 @@ const brands = [
     bgLight: "bg-sky-50",
     borderActive: "border-[#0EA5E9]",
     logo: (
-      <svg className="h-8 w-8 sm:h-10 sm:w-10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM8 15H5v-2h3v2zm0-4H5V9h3v2zm5 4h-3v-2h3v2zm0-4h-3V9h3v2zm5 4h-3v-2h3v2zm0-4h-3V9h3v2z" />
-      </svg>
+      <Image
+        src="/epson_logo.png"
+        alt="Logo Epson"
+        width={100}
+        height={40}
+        className="h-8 w-auto sm:h-10 object-contain drop-shadow-sm"
+        loading="lazy"
+      />
     ),
   },
   {
@@ -33,10 +39,14 @@ const brands = [
     bgLight: "bg-red-50",
     borderActive: "border-[#F43F5E]",
     logo: (
-      <svg className="h-8 w-8 sm:h-10 sm:w-10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <circle cx="12" cy="12" r="3.2" />
-        <path d="M9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z" />
-      </svg>
+      <Image
+        src="/logo_canon.png"
+        alt="Logo Canon"
+        width={100}
+        height={40}
+        className="h-8 w-auto sm:h-10 object-contain drop-shadow-sm"
+        loading="lazy"
+      />
     ),
   },
   {
@@ -47,9 +57,33 @@ const brands = [
     bgLight: "bg-orange-50",
     borderActive: "border-[#FF6B35]",
     logo: (
-      <svg className="h-8 w-8 sm:h-10 sm:w-10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M3 5h4v2H5v2h2v2H5v2h2v2H3V5zm6 0h3c1.1 0 2 .9 2 2v1c0 .55-.45 1-1 1 .55 0 1 .45 1 1v2c0 1.1-.9 2-2 2H9V5zm2 2v2h1V7h-1zm0 4v2h1v-2h-1zm4-6h2v4h1V5h2v6h-2V7h-1v4h-2V5zm-8 12h14v2H7v-2z" />
-      </svg>
+      <Image
+        src="/logo_brother.png"
+        alt="Logo Brother"
+        width={120}
+        height={48}
+        // 👇 AQUI QUE VOCÊ EDITA O ZOOM: a propriedade scale-150
+        className="h-10 w-auto sm:h-12 scale-400 object-contain drop-shadow-sm"
+        loading="lazy"
+      />
+    ),
+  },
+  {
+    id: "hp",
+    name: "HP",
+    accent: "#0096D6",
+    gradient: "from-[#0096D6] to-[#00B3FF]",
+    bgLight: "bg-blue-50",
+    borderActive: "border-[#0096D6]",
+    logo: (
+      <Image
+        src="/logo_hp.png"
+        alt="Logo HP"
+        width={100}
+        height={40}
+        className="h-8 w-auto sm:h-10 object-contain drop-shadow-sm"
+        loading="lazy"
+      />
     ),
   },
 ];
@@ -68,13 +102,13 @@ export default function BrandsNavSection({ brandProducts = {} }) {
   }, []);
 
   const loweredSearch = searchTerm.trim().toLowerCase();
-  const filteredProducts = loweredSearch 
+  const filteredProducts = loweredSearch
     ? allProducts.filter(product => {
-        const titleMatch = product.name.toLowerCase().includes(loweredSearch);
-        const descMatch = product.description.toLowerCase().includes(loweredSearch);
-        const tagsMatch = product.tags.some(tag => tag.toLowerCase().includes(loweredSearch));
-        return titleMatch || descMatch || tagsMatch;
-      })
+      const titleMatch = product.name.toLowerCase().includes(loweredSearch);
+      const descMatch = product.description.toLowerCase().includes(loweredSearch);
+      const tagsMatch = product.tags.some(tag => tag.toLowerCase().includes(loweredSearch));
+      return titleMatch || descMatch || tagsMatch;
+    })
     : [];
 
   useEffect(() => {
@@ -139,14 +173,14 @@ export default function BrandsNavSection({ brandProducts = {} }) {
           /* Search Results */
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
             <div className="mb-12 text-center">
-               <h3 className="text-2xl font-black text-theme-text-primary sm:text-3xl">
-                 {filteredProducts.length > 0 ? "Resultados da Busca" : "Nenhum resultado encontrado"}
-               </h3>
-               <p className="mt-3 text-base sm:text-lg text-theme-text-secondary">
-                 {filteredProducts.length > 0 
-                   ? `Encontramos ${filteredProducts.length} ${filteredProducts.length === 1 ? "produto" : "produtos"} para "${searchTerm}"`
-                   : `Não encontramos nada parecido com "${searchTerm}". Tente buscar pelo modelo da sua impressora ou cartucho.`}
-               </p>
+              <h3 className="text-2xl font-black text-theme-text-primary sm:text-3xl">
+                {filteredProducts.length > 0 ? "Resultados da Busca" : "Nenhum resultado encontrado"}
+              </h3>
+              <p className="mt-3 text-base sm:text-lg text-theme-text-secondary">
+                {filteredProducts.length > 0
+                  ? `Encontramos ${filteredProducts.length} ${filteredProducts.length === 1 ? "produto" : "produtos"} para "${searchTerm}"`
+                  : `Não encontramos nada parecido com "${searchTerm}". Tente buscar pelo modelo da sua impressora ou cartucho.`}
+              </p>
             </div>
             {filteredProducts.length > 0 && (
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -190,10 +224,9 @@ export default function BrandsNavSection({ brandProducts = {} }) {
                     key={brand.id}
                     onClick={() => handleBrandClick(brand.id)}
                     className={`group relative flex flex-col items-center justify-center gap-3 rounded-2xl p-6 sm:p-8 transition-all duration-300 active:scale-95 overflow-hidden
-                      ${
-                        isActive
-                          ? `bg-theme-bg-glass ring-2 ring-theme-border shadow-[0_0_30px_rgba(var(--theme-accent-rgb),0.05)] scale-[1.02] border border-theme-border`
-                          : "bg-theme-bg-card border-2 border-theme-border/50 hover:border-theme-border hover:bg-theme-bg-glass hover:-translate-y-2"
+                      ${isActive
+                        ? `bg-theme-bg-glass ring-2 ring-theme-border shadow-[0_0_30px_rgba(var(--theme-accent-rgb),0.05)] scale-[1.02] border border-theme-border`
+                        : "bg-theme-bg-card border-2 border-theme-border/50 hover:border-theme-border hover:bg-theme-bg-glass hover:-translate-y-2"
                       }
                     `}
                     style={{
@@ -203,34 +236,30 @@ export default function BrandsNavSection({ brandProducts = {} }) {
                     aria-expanded={isActive}
                   >
                     {/* Colored gradient bar at top */}
-                    <div 
-                      className={`absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r ${brand.gradient} transition-opacity duration-300 ${
-                        isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"
-                      }`}
+                    <div
+                      className={`absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r ${brand.gradient} transition-opacity duration-300 ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+                        }`}
                     />
-                    
-                    <div 
-                      className={`p-3 sm:p-4 rounded-2xl transition-all duration-300 flex items-center justify-center ${
-                        isActive 
-                          ? "bg-theme-text-primary text-theme-bg-primary shadow-lg scale-110" 
-                          : "bg-theme-bg-glass group-hover:bg-theme-text-primary group-hover:shadow-md group-hover:text-theme-bg-primary"
-                      }`}
+
+                    <div
+                      className={`p-3 sm:p-4 rounded-2xl transition-all duration-300 flex items-center justify-center ${isActive
+                        ? "bg-theme-text-primary text-theme-bg-primary shadow-lg scale-110"
+                        : "bg-theme-bg-glass group-hover:bg-theme-text-primary group-hover:shadow-md group-hover:text-theme-bg-primary"
+                        }`}
                       style={{ color: isActive ? brand.accent : brand.accent }}
                     >
                       {brand.logo}
                     </div>
                     <div className="text-center">
                       <span
-                        className={`block text-sm sm:text-base font-black uppercase tracking-wider transition-colors duration-300 ${
-                          isActive ? "text-theme-text-primary" : "text-theme-text-secondary group-hover:text-theme-text-primary"
-                        }`}
+                        className={`block text-sm sm:text-base font-black uppercase tracking-wider transition-colors duration-300 ${isActive ? "text-theme-text-primary" : "text-theme-text-secondary group-hover:text-theme-text-primary"
+                          }`}
                       >
                         {brand.name}
                       </span>
                       <span
-                        className={`mt-1 block text-[10px] sm:text-xs font-bold uppercase tracking-widest transition-colors duration-300 ${
-                          isActive ? "text-theme-accent" : "text-theme-text-muted group-hover:text-theme-text-secondary"
-                        }`}
+                        className={`mt-1 block text-[10px] sm:text-xs font-bold uppercase tracking-widest transition-colors duration-300 ${isActive ? "text-theme-accent" : "text-theme-text-muted group-hover:text-theme-text-secondary"
+                          }`}
                       >
                         {isActive ? "✓ Selecionada" : "Ver produtos →"}
                       </span>
