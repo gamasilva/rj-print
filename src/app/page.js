@@ -1,11 +1,16 @@
+import dynamic from "next/dynamic";
 import HeroSection from "@/components/HeroSection";
 import BrandsNavSection from "@/components/BrandsNavSection";
-import TrustSection from "@/components/TrustSection";
-import SocialProofSection from "@/components/SocialProofSection";
-import AuthoritySection from "@/components/AuthoritySection";
-import GuaranteeSection from "@/components/GuaranteeSection";
-import AboutSection from "@/components/AboutSection";
-import MainProductsSection from "@/components/MainProductsSection";
+
+// Componentes abaixo do fold — carregados dinamicamente em chunks separados.
+// ssr:true mantém a renderização no servidor (SEO intacto).
+// O browser só baixa o JS deles quando o React precisa hidratar.
+const AuthoritySection   = dynamic(() => import("@/components/AuthoritySection"));
+const GuaranteeSection   = dynamic(() => import("@/components/GuaranteeSection"));
+const MainProductsSection = dynamic(() => import("@/components/MainProductsSection"));
+const AboutSection       = dynamic(() => import("@/components/AboutSection"));
+const SocialProofSection = dynamic(() => import("@/components/SocialProofSection"));
+const TrustSection       = dynamic(() => import("@/components/TrustSection"));
 
 /* ───────────────────────────────────────────── */
 /*  DADOS DE PRODUTOS — Suprimentos Originais    */

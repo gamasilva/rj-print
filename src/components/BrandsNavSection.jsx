@@ -1,7 +1,15 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import ProductCard from "./ProductCard";
+import dynamic from "next/dynamic";
+
+// ProductCard — chunk separado, só hidratado quando o painel de marca abre
+const ProductCard = dynamic(() => import("./ProductCard"), { ssr: false });
+
+// PromoCarousel — componente mais pesado (carousel + modal + Image).
+// ssr:false pois usa animações e estado local que não fazem sentido no servidor.
+const PromoCarousel = dynamic(() => import("./PromoCarousel"), { ssr: false });
+
 
 const brands = [
   {
@@ -91,7 +99,12 @@ export default function BrandsNavSection({ brandProducts = {} }) {
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-10">
-        
+
+        {/* ── Carousel de Promoções ─────────────────────── */}
+        <div className="mb-10 sm:mb-14 -mx-4 sm:-mx-6 lg:-mx-8">
+          <PromoCarousel />
+        </div>
+
         {/* Search Bar - Highlighted */}
         <div className="mx-auto max-w-3xl mb-12 sm:mb-16 relative group z-20">
           <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-theme-accent to-theme-accent-light opacity-30 blur-lg group-hover:opacity-50 transition duration-500"></div>

@@ -2,7 +2,10 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import ProductModal from "./ProductModal";
+import dynamic from "next/dynamic";
+
+// Modal carregado sob demanda — só baixado quando o usuário abre um produto (clique)
+const ProductModal = dynamic(() => import("./ProductModal"), { ssr: false });
 
 const WHATSAPP_NUMBER = "5521964338875";
 
