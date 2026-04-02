@@ -81,18 +81,15 @@ html.theme-light-orange {
    - Usar overflow-x:clip no body (contém overflow SEM criar scroll context)
    - overflow-x:clip é seguro para animações CSS (preserva compositor layers)
    ═══════════════════════════════════════════════════════ */
-html {
-  scroll-behavior: smooth;
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 body {
   font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* overflow-x:clip contém overflow horizontal SEM criar scroll context
-     e SEM matar GPU compositing das animações CSS */
-  overflow-x: clip;
-  /* Safe area para iPhones com notch / home indicator */
   padding-bottom: env(safe-area-inset-bottom);
 }
 
@@ -155,14 +152,4 @@ body {
 }
 .scrollbar-none::-webkit-scrollbar {
   display: none;
-}
-
-/* Respeita preferência de motion reduzida */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
 }

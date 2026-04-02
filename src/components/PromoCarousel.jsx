@@ -338,7 +338,10 @@ export default function PromoCarousel() {
           - promo-track-wrapper para o seletor :hover do CSS global
         */}
         <div className="promo-track-wrapper overflow-hidden pb-1">
-          <div className="promo-track flex gap-4 w-max">
+          <div 
+            className="promo-track flex gap-4 w-max"
+            style={{ animationPlayState: selectedPromo ? 'paused' : 'running' }}
+          >
             {items.map((promo, i) => (
               <PromoCard
                 key={`${promo.id}-${i}`}
