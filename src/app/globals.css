@@ -74,14 +74,16 @@ html.theme-light-orange {
 }
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden; /* Impede scroll horizontal em toda a página */
+  /* NUNCA use overflow-x:hidden no html — mata GPU compositing em iOS Safari
+     e congela animações CSS. Use clip no body como alternativa segura. */
 }
 
 body {
   font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden; /* Dupla proteção contra overflow lateral */
+  /* overflow-clip-path não quebra GPU compositing, ao contrário de overflow:hidden no html */
+  max-width: 100vw;
   /* Safe area para iPhones com notch / home indicator */
   padding-bottom: env(safe-area-inset-bottom);
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 
 const WHATSAPP_NUMBER = "5521964338875";
@@ -130,7 +130,7 @@ function PromoModal({ promo, onClose }) {
       <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" onClick={onClose} />
 
       {/*
-        Mobile  → bottom sheet compacto: max-h-[78dvh] para não ocupar tela inteira
+        Mobile  → bottom sheet compacto: max-h-[78dvh]
         Desktop → dialog centralizado: max-w-md, max-h-[80dvh]
       */}
       <div className="relative z-10 w-full sm:max-w-md mx-0 sm:mx-4 flex flex-col max-h-[78dvh] sm:max-h-[80dvh] overflow-hidden rounded-t-2xl sm:rounded-2xl bg-[#12121f] border-t sm:border border-white/15 shadow-[0_-12px_60px_rgba(0,0,0,0.7)]">
@@ -140,19 +140,20 @@ function PromoModal({ promo, onClose }) {
           <div className="h-[3px] w-9 rounded-full bg-white/25" />
         </div>
 
-        {/* Close */}
+        {/* Close — pill com texto no mobile, fácil de tocar */}
         <button
           onClick={onClose}
-          className="absolute right-3 top-3 z-20 flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-white/60 hover:bg-white/20 hover:text-white transition-all active:scale-90"
+          className="absolute right-3 top-3 z-20 flex items-center gap-1.5 rounded-full bg-white/15 px-3 py-2 text-[11px] font-bold text-white/80 hover:bg-white/25 hover:text-white transition-all active:scale-90 sm:h-8 sm:w-8 sm:gap-0 sm:p-0 sm:justify-center sm:px-0 sm:py-0"
           aria-label="Fechar"
         >
-          <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+          <svg className="h-3.5 w-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
           </svg>
+          <span className="sm:hidden">Fechar</span>
         </button>
 
         <div className="overflow-y-auto overscroll-contain">
-          {/* Imagem — mais compacta no mobile */}
+          {/* Imagem — compacta no mobile */}
           <div className="relative bg-white flex items-center justify-center h-32 sm:h-44 shrink-0">
             <span className={`absolute left-3 top-3 z-10 ${promo.badgeColor} rounded-md px-2 py-0.5 text-[9px] font-black uppercase tracking-wider text-white`}>
               {promo.badge}
@@ -215,7 +216,7 @@ function PromoModal({ promo, onClose }) {
               rel="noopener noreferrer"
               className="mt-3 flex w-full items-center justify-center gap-2.5 rounded-xl bg-[#25D366] py-3.5 text-[14px] font-black uppercase tracking-wide text-white shadow-[0_6px_20px_rgba(37,211,102,0.4)] hover:bg-[#1ebd5a] active:scale-95 transition-all"
             >
-              <svg className="h-4.5 w-4.5 h-[18px] w-[18px]" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <svg className="h-[18px] w-[18px]" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
               </svg>
               Pedir Agora — R$ {promo.price}
@@ -236,11 +237,6 @@ function PromoCard({ promo, onClick }) {
   return (
     <button
       onClick={() => onClick(promo)}
-      /*
-        CONTRASTE: bg-theme-bg-card é opaco e theme-aware (escuro no dark, claro no light).
-        Borda visível com theme-border. Sombra sutil para elevação.
-        Tamanho maior: w-[260px] mobile → w-[300px] sm → w-[320px] lg
-      */
       className="group relative flex-shrink-0 w-[260px] sm:w-[300px] lg:w-[320px] rounded-2xl overflow-hidden border border-theme-border bg-theme-bg-card shadow-md hover:shadow-xl hover:border-theme-accent/50 hover:-translate-y-1 transition-all duration-300 cursor-pointer text-left"
       aria-label={`Ver oferta: ${promo.name}`}
     >
@@ -249,7 +245,7 @@ function PromoCard({ promo, onClick }) {
         {promo.badge}
       </span>
 
-      {/* Imagem — altura generosa */}
+      {/* Imagem */}
       <div className="relative bg-white flex items-center justify-center h-[150px] sm:h-[170px] lg:h-[180px] overflow-hidden">
         <Image
           src={promo.image}
@@ -261,25 +257,16 @@ function PromoCard({ promo, onClick }) {
         />
       </div>
 
-      {/* Info — usa variáveis de tema para contraste perfeito */}
+      {/* Info */}
       <div className="p-4">
-        {/* Marca */}
         <p className="text-[9px] font-black uppercase tracking-widest text-theme-accent">{promo.brand}</p>
-
-        {/* Nome — alto contraste via theme-text-primary */}
         <p className="mt-0.5 text-[14px] font-black text-theme-text-primary leading-snug line-clamp-1">
           {promo.name}
         </p>
-
-        {/* Compatibilidade — secondary para hierarquia */}
         <p className="mt-0.5 text-[11px] text-theme-text-secondary leading-tight line-clamp-1">
           {promo.short}
         </p>
-
-        {/* Divider */}
         <div className="my-3 h-px bg-theme-border" />
-
-        {/* Preços */}
         <div className="flex items-end justify-between">
           <div>
             <p className="text-[10px] text-theme-text-muted line-through">R$ {promo.oldPrice}</p>
@@ -293,8 +280,6 @@ function PromoCard({ promo, onClick }) {
             -{promo.saving}
           </span>
         </div>
-
-        {/* Botão ver oferta */}
         <div className="mt-3 flex items-center justify-center gap-2 rounded-xl bg-theme-accent/10 border border-theme-accent/25 py-2.5 text-[11px] font-bold text-theme-accent group-hover:bg-theme-accent group-hover:text-white transition-all duration-200">
           <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -310,13 +295,13 @@ function PromoCard({ promo, onClick }) {
 // ─── Carousel principal ────────────────────────────────────────────────────
 export default function PromoCarousel() {
   const [selectedPromo, setSelectedPromo] = useState(null);
-  const [isPaused, setIsPaused] = useState(false);
 
+  // Duplica os items para loop contínuo
   const items = [...PROMOS, ...PROMOS];
 
   return (
     <>
-      <div className="relative overflow-hidden">
+      <div className="relative">
 
         {/* Header */}
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-5 flex items-center justify-between">
@@ -348,23 +333,15 @@ export default function PromoCarousel() {
           </span>
         </div>
 
-        {/* Fade nas bordas */}
-        <div
-          className="relative pb-1"
-          style={{
-            WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%)",
-            maskImage: "linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%)",
-          }}
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-        >
-          <div
-            className="flex gap-4 w-max"
-            style={{
-              animation: "promo-scroll 42s linear infinite",
-              animationPlayState: isPaused ? "paused" : "running",
-            }}
-          >
+        {/*
+          CORREÇÃO MOBILE:
+          - SEM WebkitMaskImage (força repaint CPU, quebra GPU compositing)
+          - overflow:hidden apenas no container, NÃO no html/body
+          - Classe CSS "promo-track" pausa animação via :hover NO CSS (não via JS)
+          - will-change:transform garante layer próprio no GPU
+        */}
+        <div className="overflow-hidden pb-1">
+          <div className="promo-track flex gap-4 w-max">
             {items.map((promo, i) => (
               <PromoCard
                 key={`${promo.id}-${i}`}
@@ -386,9 +363,29 @@ export default function PromoCarousel() {
       )}
 
       <style>{`
+        /* 
+          GPU-safe infinite scroll:
+          - will-change:transform → layer dedicado no compositor (não bloqueia scroll)
+          - translateZ(0) → força aceleração de hardware em todos os browsers
+          - animation-play-state via :hover no CSS → zero JS no caminho crítico
+          - Em mobile (pointer:coarse) NÃO pausa — toque é para scroll, não hover
+        */
+        .promo-track {
+          animation: promo-scroll 42s linear infinite;
+          will-change: transform;
+          transform: translateZ(0);
+        }
+
         @keyframes promo-scroll {
-          0%   { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
+          0%   { transform: translateZ(0) translateX(0); }
+          100% { transform: translateZ(0) translateX(-50%); }
+        }
+
+        /* Pausa apenas em dispositivos com mouse (desktop) */
+        @media (hover: hover) and (pointer: fine) {
+          .overflow-hidden:hover .promo-track {
+            animation-play-state: paused;
+          }
         }
       `}</style>
     </>
