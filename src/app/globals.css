@@ -72,22 +72,57 @@ html.theme-light-orange {
   from { transform: translateX(0); }
   to { transform: translateX(calc(-100% - 2.5rem)); }
 }
+
+/* ═══════════════════════════════════════════════════════
+   MOBILE-FIRST: Contenção de overflow horizontal
+   
+   REGRA FUNDAMENTAL:
+   - NUNCA usar overflow-x:hidden no html (mata GPU compositing no iOS)
+   - Usar overflow-x:clip no body (contém overflow SEM criar scroll context)
+   - overflow-x:clip é seguro para animações CSS (preserva compositor layers)
+   ═══════════════════════════════════════════════════════ */
 html {
   scroll-behavior: smooth;
-  /* NUNCA use overflow-x:hidden no html — mata GPU compositing em iOS Safari
-     e congela animações CSS. Use clip no body como alternativa segura. */
 }
 
 body {
   font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* overflow-clip-path não quebra GPU compositing, ao contrário de overflow:hidden no html */
-  max-width: 100vw;
+  /* overflow-x:clip contém overflow horizontal SEM criar scroll context
+     e SEM matar GPU compositing das animações CSS */
+  overflow-x: clip;
   /* Safe area para iPhones com notch / home indicator */
   padding-bottom: env(safe-area-inset-bottom);
 }
 
+/* ═══════════════════════════════════════════════════════
+   CARROSSEL: Animação GPU-safe para infinite scroll
+   
+   - will-change:transform → layer dedicado no compositor
+   - translate3d(0,0,0) → força aceleração de hardware
+   - Pausa APENAS com mouse (hover:hover + pointer:fine)
+   - Em mobile (pointer:coarse) NUNCA pausa → toque é scroll, não hover
+   ═══════════════════════════════════════════════════════ */
+.promo-track {
+  animation: promo-scroll 42s linear infinite;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+@keyframes promo-scroll {
+  0%   { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+/* Pausa apenas em dispositivos com mouse (desktop) */
+@media (hover: hover) and (pointer: fine) {
+  .promo-track-wrapper:hover .promo-track {
+    animation-play-state: paused;
+  }
+}
 
 /* Skip Link - Acessibilidade */
 .skip-link {

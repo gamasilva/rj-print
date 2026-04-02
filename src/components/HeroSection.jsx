@@ -29,7 +29,7 @@ export default function HeroSection() {
         {/* Logo fundo GIGANTE */}
         <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center opacity-[0.06]" aria-hidden="true">
           <Image src="/logo_rjprint.webp" alt="" role="presentation" width={500} height={500}
-            className="w-full max-w-[120vw] h-auto object-contain" priority fetchPriority="high" />
+            className="w-full max-w-full h-auto object-contain" priority fetchPriority="high" />
         </div>
 
         {/* ── COPY PRINCIPAL ── */}

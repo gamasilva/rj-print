@@ -129,10 +129,6 @@ function PromoModal({ promo, onClose }) {
       {/* Backdrop */}
       <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" onClick={onClose} />
 
-      {/*
-        Mobile  → bottom sheet compacto: max-h-[78dvh]
-        Desktop → dialog centralizado: max-w-md, max-h-[80dvh]
-      */}
       <div className="relative z-10 w-full sm:max-w-md mx-0 sm:mx-4 flex flex-col max-h-[78dvh] sm:max-h-[80dvh] overflow-hidden rounded-t-2xl sm:rounded-2xl bg-[#12121f] border-t sm:border border-white/15 shadow-[0_-12px_60px_rgba(0,0,0,0.7)]">
 
         {/* Drag handle (mobile only) */}
@@ -140,7 +136,7 @@ function PromoModal({ promo, onClose }) {
           <div className="h-[3px] w-9 rounded-full bg-white/25" />
         </div>
 
-        {/* Close — pill com texto no mobile, fácil de tocar */}
+        {/* Close — pill com texto no mobile */}
         <button
           onClick={onClose}
           className="absolute right-3 top-3 z-20 flex items-center gap-1.5 rounded-full bg-white/15 px-3 py-2 text-[11px] font-bold text-white/80 hover:bg-white/25 hover:text-white transition-all active:scale-90 sm:h-8 sm:w-8 sm:gap-0 sm:p-0 sm:justify-center sm:px-0 sm:py-0"
@@ -334,13 +330,14 @@ export default function PromoCarousel() {
         </div>
 
         {/*
-          CORREÇÃO MOBILE:
-          - SEM WebkitMaskImage (força repaint CPU, quebra GPU compositing)
-          - overflow:hidden apenas no container, NÃO no html/body
-          - Classe CSS "promo-track" pausa animação via :hover NO CSS (não via JS)
-          - will-change:transform garante layer próprio no GPU
+          CARROSSEL MOBILE-SAFE:
+          - overflow:hidden APENAS neste wrapper (não no html/body)
+          - Classe promo-track definida no globals.css com will-change + translate3d
+          - Pausa via CSS :hover media query (hover:hover + pointer:fine)
+          - ZERO JavaScript no caminho de animação
+          - promo-track-wrapper para o seletor :hover do CSS global
         */}
-        <div className="overflow-hidden pb-1">
+        <div className="promo-track-wrapper overflow-hidden pb-1">
           <div className="promo-track flex gap-4 w-max">
             {items.map((promo, i) => (
               <PromoCard
@@ -361,33 +358,6 @@ export default function PromoCarousel() {
       {selectedPromo && (
         <PromoModal promo={selectedPromo} onClose={() => setSelectedPromo(null)} />
       )}
-
-      <style>{`
-        /* 
-          GPU-safe infinite scroll:
-          - will-change:transform → layer dedicado no compositor (não bloqueia scroll)
-          - translateZ(0) → força aceleração de hardware em todos os browsers
-          - animation-play-state via :hover no CSS → zero JS no caminho crítico
-          - Em mobile (pointer:coarse) NÃO pausa — toque é para scroll, não hover
-        */
-        .promo-track {
-          animation: promo-scroll 42s linear infinite;
-          will-change: transform;
-          transform: translateZ(0);
-        }
-
-        @keyframes promo-scroll {
-          0%   { transform: translateZ(0) translateX(0); }
-          100% { transform: translateZ(0) translateX(-50%); }
-        }
-
-        /* Pausa apenas em dispositivos com mouse (desktop) */
-        @media (hover: hover) and (pointer: fine) {
-          .overflow-hidden:hover .promo-track {
-            animation-play-state: paused;
-          }
-        }
-      `}</style>
     </>
   );
 }

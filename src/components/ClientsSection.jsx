@@ -25,7 +25,7 @@ export default function ClientsSection() {
   return (
     <section className="relative py-12 sm:py-20 overflow-hidden">
       {/* Orb decorativo */}
-      <div className="absolute bottom-0 left-0 w-[20rem] h-[20rem] bg-theme-accent/10 blur-[120px] rounded-full pointer-events-none" aria-hidden="true" />
+      <div className="absolute bottom-0 left-0 w-[20rem] max-w-[80vw] h-[20rem] bg-theme-accent/10 blur-[120px] rounded-full pointer-events-none" aria-hidden="true" />
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
           <p className="text-sm font-semibold tracking-widest text-theme-accent shadow-sm uppercase">

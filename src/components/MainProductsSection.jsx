@@ -43,7 +43,7 @@ const WHATSAPP_MSG = encodeURIComponent(
 export default function MainProductsSection() {
   return (
     <section id="produtos" className="relative py-16 sm:py-28 overflow-hidden" aria-labelledby="main-products-heading">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[40rem] h-[20rem] bg-theme-accent/10 blur-[120px] rounded-[100%] pointer-events-none" aria-hidden="true" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[40rem] max-w-full h-[20rem] bg-theme-accent/10 blur-[120px] rounded-[100%] pointer-events-none" aria-hidden="true" />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16 sm:mb-20">
           <h2

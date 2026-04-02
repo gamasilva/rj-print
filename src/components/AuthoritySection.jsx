@@ -9,7 +9,7 @@ export default function AuthoritySection() {
 
   return (
     <section id="logistica" className="relative w-full py-16 sm:py-24 overflow-hidden">
-      <div className="absolute top-0 right-0 w-96 h-96 bg-theme-accent-light/10 blur-[120px] rounded-full pointer-events-none" aria-hidden="true" />
+      <div className="absolute top-0 right-0 w-96 max-w-[80vw] h-96 bg-theme-accent-light/10 blur-[120px] rounded-full pointer-events-none" aria-hidden="true" />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
           

@@ -86,7 +86,7 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-screen flex flex-col text-theme-text-primary bg-theme-bg-end overflow-x-hidden transition-colors duration-300">
+      <body className="min-h-screen flex flex-col text-theme-text-primary bg-theme-bg-end transition-colors duration-300">
         {/* Google Tag Manager (noscript) — deve ficar imediatamente após a abertura do body */}
         <noscript>
           <iframe

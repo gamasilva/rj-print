@@ -93,15 +93,15 @@ export default function BrandsNavSection({ brandProducts = {} }) {
   const activeProducts = activeBrand ? brandProducts[activeBrand] || [] : [];
 
   return (
-    <section id="marcas" className="relative pt-32 pb-16 sm:py-24 bg-transparent overflow-x-hidden">
-      {/* Decorative elements — contidos para não causar overflow lateral */}
-      <div className="absolute top-0 left-0 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
+    <section id="marcas" className="relative pt-32 pb-16 sm:py-24 bg-transparent">
+      {/* Decorative elements — contidos dentro da section */}
+      <div className="absolute top-0 left-0 w-72 h-72 max-w-[80vw] bg-blue-500/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 max-w-[80vw] bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-10">
 
         {/* ── Carousel de Promoções ─────────────────────── */}
-        <div className="mb-10 sm:mb-14 -mx-4 sm:-mx-6 lg:-mx-8">
+        <div className="mb-10 sm:mb-14">
           <PromoCarousel />
         </div>
 
