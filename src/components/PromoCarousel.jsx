@@ -357,8 +357,6 @@ export default function PromoCarousel() {
           }}
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
-          onTouchStart={() => setIsPaused(true)}
-          onTouchEnd={() => setTimeout(() => setIsPaused(false), 3000)}
         >
           <div
             className="flex gap-4 w-max"

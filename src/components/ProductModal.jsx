@@ -40,20 +40,23 @@ export default function ProductModal({ product, brandName, onClose }) {
       />
 
       {/* Modal Container — bottom sheet no mobile, dialog centralizado no sm+ */}
-      <div className="relative z-10 mx-0 sm:mx-6 flex max-h-[92dvh] sm:max-h-[90dvh] w-full sm:max-w-3xl flex-col overflow-hidden rounded-t-3xl sm:rounded-3xl border-t sm:border border-white/15 bg-[#1e1e2e] shadow-[0_-8px_40px_rgba(0,0,0,0.5)] sm:shadow-[0_32px_80px_rgba(0,0,0,0.6)]">
-        
-        {/* Drag indicator (mobile) + Close Button */}
-        <div className="flex items-center justify-between px-4 pt-3 pb-2 sm:hidden">
-          <div className="mx-auto h-1 w-10 rounded-full bg-white/20" aria-hidden="true" />
+      <div className="relative z-10 mx-0 sm:mx-6 flex max-h-[78dvh] sm:max-h-[90dvh] w-full sm:max-w-3xl flex-col overflow-hidden rounded-t-3xl sm:rounded-3xl border-t sm:border border-white/15 bg-[#1e1e2e] shadow-[0_-8px_40px_rgba(0,0,0,0.5)] sm:shadow-[0_32px_80px_rgba(0,0,0,0.6)]">
+
+        {/* Header mobile: drag handle + botão Fechar */}
+        <div className="flex items-center justify-between px-4 pt-3 pb-2 shrink-0 sm:hidden">
+          <div className="h-1 w-10 rounded-full bg-white/20" aria-hidden="true" style={{margin: '0 auto'}} />
         </div>
+
+        {/* Botão Fechar — visível e fácil de tocar */}
         <button
           onClick={onClose}
-          className="absolute right-4 top-4 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white/70 backdrop-blur-md transition-all hover:bg-white/20 hover:text-white active:scale-90"
+          className="absolute right-3 top-3 z-20 flex items-center gap-1.5 rounded-full bg-white/15 px-3 py-2 text-[11px] font-bold text-white/80 backdrop-blur-md transition-all hover:bg-white/25 hover:text-white active:scale-90 sm:right-4 sm:top-4 sm:h-10 sm:w-10 sm:gap-0 sm:p-0 sm:justify-center"
           aria-label="Fechar"
         >
-          <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+          <svg className="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
           </svg>
+          <span className="sm:hidden">Fechar</span>
         </button>
 
         {/* Scrollable content */}
@@ -62,14 +65,14 @@ export default function ProductModal({ product, brandName, onClose }) {
           {/* Image Section — Desktop: lado a lado, Mobile: topo */}
           <div className="flex flex-col lg:flex-row">
             
-            {/* Imagem grande */}
-            <div className="relative flex items-center justify-center bg-white p-6 sm:p-10 lg:w-[45%]">
+            {/* Imagem — compacta no mobile, maior no desktop */}
+            <div className="relative flex items-center justify-center bg-white p-4 sm:p-8 lg:p-10 lg:w-[45%] h-36 sm:h-auto">
               <Image
                 src={product.image || "/product_cartridge_color.webp"}
                 alt={`${product.name} - ${brandName}`}
                 width={500}
                 height={500}
-                className="h-auto max-h-[40vh] w-auto object-contain lg:max-h-[50vh]"
+                className="h-full w-auto max-w-full object-contain sm:max-h-[30vh] lg:max-h-[45vh]"
               />
               <span className="absolute left-3 top-3 rounded-lg bg-green-500 px-3 py-1 text-[10px] font-black uppercase tracking-widest text-white shadow-lg">
                 Pronta Entrega
